@@ -99,7 +99,11 @@ client.on('messageCreate', message => {
         }
     }
     
-    if(message.content === 'Jeffrey is the しりとりおおさま') {
+    if(message.content === 'k!sf scores') {
+        message.reply('Jeffrey is the しりとりおおさま')
+    }
+
+    if(message.content === 'Jeffrey is the しりとりおおさま'){
         message.react('😘');
     }
 });
