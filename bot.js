@@ -99,6 +99,9 @@ client.on('messageCreate', message => {
         }
     }
     
+    if(message.content === 'Jeffrey is the しりとりおおさま') {
+        message.react('😘');
+    }
 });
 
 client.login(process.env.BOT_TOKEN)
