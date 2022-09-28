@@ -1,0 +1,24 @@
+{
+  "name": "language-bot-test",
+  "version": "1.0.0",
+  "description": "Test for JASS Language Class Bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c01d3ku11/language-bot-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c01d3ku11/language-bot-test/issues"
+  },
+  "homepage": "https://github.com/c01d3ku11/language-bot-test#readme",
+  "dependencies": {
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.2"
+  }
+}
