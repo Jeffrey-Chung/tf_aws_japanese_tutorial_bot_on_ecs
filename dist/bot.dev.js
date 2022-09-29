@@ -21,7 +21,8 @@ var _require5 = require('discord.js'),
     GatewayIntentBits = _require5.GatewayIntentBits;
 
 var client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
+  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
+  partials: ["MESSAGE", "REACTION"]
 }); //class IDs
 //const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
 //const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
