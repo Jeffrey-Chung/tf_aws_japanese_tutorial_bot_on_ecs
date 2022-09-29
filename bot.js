@@ -26,7 +26,7 @@ const ADD_FEEDBACK = ' class role added'
 const REMOVE_FEEDBACK = ' class role removed'
 
 //types of classes
-const BEGINNER = 'beginner'
+const BEGINNER = 'beginners'
 const INTERMEDIATE = 'intermediate'
 const ADVANCED = 'advanced'
 const ENGLISH = 'english'
@@ -105,7 +105,7 @@ client.on('messageCreate', message => {
 
     //load weekly resources beginner spring
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
-        if(message.content==='!Week-' + (i+1).toString() + '-beginner'){
+        if(message.content==='!Week-' + (i+1).toString() + '-beginners'){
             message.reply(BeginnerClassLinksSpring[i]);
         }
     }
@@ -136,7 +136,7 @@ client.on('messageCreate', message => {
     }
     
     if(message.content === 'k!sf scores') {
-        message.reply('Jeffrey is the しりとりおおさま')
+        message.reply('Jeffrey is the しりとりおおさま');
     }
 
     if(message.content === 'Jeffrey is the しりとりおおさま'){

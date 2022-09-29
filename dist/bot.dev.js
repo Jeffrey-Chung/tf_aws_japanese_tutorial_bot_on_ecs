@@ -36,7 +36,7 @@ var REMOVE_ROLE_PREFIX = '!remove-';
 var ADD_FEEDBACK = ' class role added';
 var REMOVE_FEEDBACK = ' class role removed'; //types of classes
 
-var BEGINNER = 'beginner';
+var BEGINNER = 'beginners';
 var INTERMEDIATE = 'intermediate';
 var ADVANCED = 'advanced';
 var ENGLISH = 'english';
@@ -110,7 +110,7 @@ client.on('messageCreate', function (message) {
 
 
   for (var i = 0; i < BeginnerClassLinksSpring.length; i++) {
-    if (message.content === '!Week-' + (i + 1).toString() + '-beginner') {
+    if (message.content === '!Week-' + (i + 1).toString() + '-beginners') {
       message.reply(BeginnerClassLinksSpring[i]);
     }
   } //load weekly resources intermediate spring
