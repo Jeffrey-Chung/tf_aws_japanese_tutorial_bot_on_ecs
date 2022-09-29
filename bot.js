@@ -14,10 +14,10 @@ const client = new Client({
 });
 
 //class IDs
-const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
-const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
-const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
-const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
+//const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
+//const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
+//const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
+//const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
 
 //manage role prefixes
 const ADD_ROLE_PREFIX = '!add-';
@@ -80,6 +80,9 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
+        }
+        else if (message.content === `${ADD_ROLE_PREFIX}${BEGINNER}`) {
+            message.reply('You already added beginners role'); //feedback
         }  
      }
     
@@ -90,7 +93,9 @@ client.on('messageCreate', message => {
             message.member.roles.remove(roleToRemove); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
         }
-
+        else if (message.content === `${ADD_ROLE_PREFIX}${INTERMEDIATE}`) {
+            message.reply('You already added intermediate role'); //feedback
+        } 
     }
     
     //remove advanced role
@@ -100,6 +105,9 @@ client.on('messageCreate', message => {
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
         }
+        else if (message.content === `${ADD_ROLE_PREFIX}${ADVANCED}`) {
+            message.reply('You already added advanced role'); //feedback
+        } 
     }
   
     //remove english/study group role
@@ -109,6 +117,9 @@ client.on('messageCreate', message => {
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
         }
+        else if (message.content === `${ADD_ROLE_PREFIX}${ENGLISH}`) {
+            message.reply('You already added english/study group role'); //feedback
+        } 
     }
 
     //load weekly resources beginner spring

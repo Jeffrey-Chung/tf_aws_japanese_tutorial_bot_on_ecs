@@ -23,14 +23,10 @@ var _require5 = require('discord.js'),
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 }); //class IDs
-
-var BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
-
-var INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
-
-var ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
-
-var ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
+//const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
+//const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
+//const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
+//const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
 //manage role prefixes
 
 var ADD_ROLE_PREFIX = '!add-';
@@ -112,6 +108,8 @@ client.on('messageCreate', function (message) {
       });
       message.member.roles.remove(roleToRemove);
       message.reply("".concat(BEGINNER).concat(REMOVE_FEEDBACK)); //feedback
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(BEGINNER)) {
+      message.reply('You already added beginners role'); //feedback
     }
   } //remove intermediate role
 
@@ -126,6 +124,8 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.remove(_roleToRemove);
       message.reply("".concat(INTERMEDIATE).concat(REMOVE_FEEDBACK)); //feedback
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(INTERMEDIATE)) {
+      message.reply('You already added intermediate role'); //feedback
     }
   } //remove advanced role
 
@@ -140,6 +140,8 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.remove(_roleToRemove2);
       message.reply("".concat(ADVANCED).concat(REMOVE_FEEDBACK)); //feedback
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(ADVANCED)) {
+      message.reply('You already added advanced role'); //feedback
     }
   } //remove english/study group role
 
@@ -154,6 +156,8 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.remove(_roleToRemove3);
       message.reply("".concat(ENGLISH).concat(REMOVE_FEEDBACK)); //feedback
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(ENGLISH)) {
+      message.reply('You already added english/study group role'); //feedback
     }
   } //load weekly resources beginner spring
 
