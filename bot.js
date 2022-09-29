@@ -1,6 +1,9 @@
 require('dotenv/config');
 
 const {BeginnerClassLinksSpring} = require('./beginner.js');
+const {IntermediateClassLinksSpring} = require('./intermediate.js');
+const {AdvancedClassLinksSpring} = require('./advanced.js');
+const {EnglishClassLinksSpring} = require('./english.js');
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
 	intents: [
@@ -104,6 +107,27 @@ client.on('messageCreate', message => {
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
         if(message.content==='!Week-' + (i+1).toString() + '-beginner'){
             message.reply(BeginnerClassLinksSpring[i]);
+        }
+    }
+
+    //load weekly resources intermediate spring
+    for(let i=0; i<IntermediateClassLinksSpring.length; i++){
+        if(message.content==='!Week-' + (i+1).toString() + '-intermediate'){
+            message.reply(IntermediateClassLinksSpring[i]);
+        }
+    }
+
+    //load weekly resources beginner spring
+    for(let i=0; i<AdvancedClassLinksSpring.length; i++){
+        if(message.content==='!Week-' + (i+1).toString() + '-advanced'){
+            message.reply(AdvancedClassLinksSpring[i]);
+        }
+    }
+
+    //load weekly resources beginner spring
+    for(let i=0; i<EnglishClassLinksSpring.length; i++){
+        if(message.content==='!Week-' + (i+1).toString() + '-english'){
+            message.reply(EnglishClassLinksSpring[i]);
         }
     }
     
