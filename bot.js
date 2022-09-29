@@ -99,9 +99,12 @@ client.on('messageCreate', message => {
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
         }
     }
-    if(message.content === '!Week-1-beginner')
-    {
-        message.reply(BeginnerClassLinksSpring[0]);
+
+    //load weekly resources beginner spring
+    for(let i=0; i<BeginnerClassLinksSpring.length; i++){
+        if(message.content==='!Week-' + (i+1).toString() + '-beginner'){
+            message.reply(BeginnerClassLinksSpring[i]);
+        }
     }
     
     if(message.content === 'k!sf scores') {
