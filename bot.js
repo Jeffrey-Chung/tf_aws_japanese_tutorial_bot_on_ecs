@@ -1,5 +1,6 @@
 require('dotenv/config');
 
+const {BeginnerClassLinksSpring} = require('./beginner.js');
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
 	intents: [
@@ -97,6 +98,10 @@ client.on('messageCreate', message => {
             message.member.roles.remove(`${ENGLISH_ID}`); 
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
         }
+    }
+    if(message.content === '!Week-1-beginner')
+    {
+        message.reply(BeginnerClassLinksSpring.week1);
     }
     
     if(message.content === 'k!sf scores') {

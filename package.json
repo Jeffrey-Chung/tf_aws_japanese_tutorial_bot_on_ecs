@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Test for JASS Language Class Bot",
   "main": "bot.js",
+  "module": "commonjs",
   "scripts": {
     "start": "node bot.js",
     "devStart": "nodemon bot.js"
