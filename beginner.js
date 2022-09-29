@@ -19,5 +19,8 @@
         "Not yet available"
      ];
 
-     module.exports = {BeginnerClassLinksSpring};
+     var HiraganaSheet = 'https://drive.google.com/file/d/19pdAc-wP9P5faJBgvxFQI8skRDqQne9h/view?usp=sharing';
+     var KatakanaSheet = 'https://drive.google.com/file/d/1eAexV7_EX9VrpuzBCnLT7EnT9mSWbTg_/view?usp=sharing';
+
+     module.exports = {BeginnerClassLinksSpring, HiraganaSheet, KatakanaSheet};
 

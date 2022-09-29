@@ -1,6 +1,6 @@
 require('dotenv/config');
 
-const {BeginnerClassLinksSpring} = require('./beginner.js');
+const {BeginnerClassLinksSpring, HiraganaSheet, KatakanaSheet} = require('./beginner.js');
 const {IntermediateClassLinksSpring} = require('./intermediate.js');
 const {AdvancedClassLinksSpring} = require('./advanced.js');
 const {EnglishClassLinksSpring} = require('./english.js');
@@ -14,22 +14,23 @@ const client = new Client({
 });
 
 //class IDs
-const BEGINNER_ID = '1024671967846080613' //add appropriate role ID for beginner role in JASS server
-const INTERMEDIATE_ID = '1024672039585460224' //add appropriate role ID for intermediate role in JASS server
-const ADVANCED_ID = '1024672057855844392' //add appropriate role ID for advanced role in JASS server
-const ENGLISH_ID = '1024672075526438922' //add appropriate role ID for english role in JASS server
+const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
+const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
+const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
+const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
 
 //manage role prefixes
-const ADD_ROLE_PREFIX = '!add-'
-const REMOVE_ROLE_PREFIX = '!remove-'   
-const ADD_FEEDBACK = ' class role added'
-const REMOVE_FEEDBACK = ' class role removed'
+const ADD_ROLE_PREFIX = '!add-';
+const REMOVE_ROLE_PREFIX = '!remove-';   
+const ADD_FEEDBACK = ' class role added';
+const REMOVE_FEEDBACK = ' class role removed';
+const WEEK_PREFIX = '!Week-';
 
 //types of classes
-const BEGINNER = 'beginners'
-const INTERMEDIATE = 'intermediate'
-const ADVANCED = 'advanced'
-const ENGLISH = 'english'
+const BEGINNER = 'beginners';
+const INTERMEDIATE = 'intermediate';
+const ADVANCED = 'advanced';
+const ENGLISH = 'english';
 
 client.on('ready', () => {
     console.log('The bot is ready');
@@ -37,41 +38,44 @@ client.on('ready', () => {
 
 client.on('messageCreate', message => {
     //add beginner role
-    if (!message.member.roles.cache.has(`${BEGINNER_ID}`)) {
+    if(!message.member.roles.cache.some(role => role.name === 'Beginners')){
         if (message.content === `${ADD_ROLE_PREFIX}${BEGINNER}`) {
-            message.member.roles.add(`${BEGINNER_ID}`); 
+            const roleToGive = message.guild.roles.cache.find(role => role.name === "Beginners");
+            message.member.roles.add(roleToGive); 
             message.reply(`${BEGINNER}${ADD_FEEDBACK}`); //feedback
         }
-
     }
 
      //add intermediate role
-     if (!message.member.roles.cache.has(`${INTERMEDIATE_ID}`)) {
+     if (!message.member.roles.cache.some(role => role.name === 'Intermediate')) {
         if (message.content === `${ADD_ROLE_PREFIX}${INTERMEDIATE}`) {
-            message.member.roles.add(`${INTERMEDIATE_ID}`); 
+            const roleToGive = message.guild.roles.cache.find(role => role.name === "Intermediate");
+            message.member.roles.add(roleToGive); 
             message.reply(`${INTERMEDIATE}${ADD_FEEDBACK}`); //feedback
         }
 
      }
     
      //add advanced role
-     if (!message.member.roles.cache.has(`${ADVANCED_ID}`)) {
+     if (!message.member.roles.cache.some(role => role.name === 'Advanced')) {
         if (message.content === `${ADD_ROLE_PREFIX}${ADVANCED}`) {
-            message.member.roles.add(`${ADVANCED_ID}`); 
+            const roleToGive = message.guild.roles.cache.find(role => role.name === "Advanced");
+            message.member.roles.add(roleToGive); 
             message.reply(`${ADVANCED}${ADD_FEEDBACK}`); //feedback
         }
      }
      
      //add english/study group role
-     if (!message.member.roles.cache.has(`${ENGLISH_ID}`)) {
+     if (!message.member.roles.cache.some(role => role.name === 'English')) {
         if (message.content === `${ADD_ROLE_PREFIX}${ENGLISH}`) {
-            message.member.roles.add(`${ENGLISH_ID}`); 
+            const roleToGive = message.guild.roles.cache.find(role => role.name === "English");
+            message.member.roles.add(roleToGive); 
             message.reply(`${ENGLISH}${ADD_FEEDBACK}`); //feedback
         }
      }
      
      //remove beginner role
-     if (message.member.roles.cache.has(`${BEGINNER_ID}`)) {
+     if (message.member.roles.cache.some(role => role.name === 'Beginners')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${BEGINNER}`) {
             message.member.roles.remove(`${BEGINNER_ID}`); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
@@ -79,7 +83,7 @@ client.on('messageCreate', message => {
      }
     
     //remove intermediate role
-    if (message.member.roles.cache.has(`${INTERMEDIATE_ID}`)) {
+    if (message.member.roles.cache.some(role => role.name === 'Intermediate')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${INTERMEDIATE}`) {
             message.member.roles.remove(`${INTERMEDIATE_ID}`); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
@@ -88,7 +92,7 @@ client.on('messageCreate', message => {
     }
     
     //remove advanced role
-    if (message.member.roles.cache.has(`${ADVANCED_ID}`)) {
+    if (message.member.roles.cache.some(role => role.name === 'Advanced')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${ADVANCED}`) {
             message.member.roles.remove(`${ADVANCED_ID}`); 
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
@@ -96,7 +100,7 @@ client.on('messageCreate', message => {
     }
   
     //remove english/study group role
-    if (message.member.roles.cache.has(`${ENGLISH_ID}`)) {
+    if (message.member.roles.cache.some(role => role.name === 'English')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${ENGLISH}`) {
             message.member.roles.remove(`${ENGLISH_ID}`); 
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
@@ -105,38 +109,47 @@ client.on('messageCreate', message => {
 
     //load weekly resources beginner spring
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
-        if(message.content==='!Week-' + (i+1).toString() + '-beginners'){
+        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${BEGINNER}`){
             message.reply(BeginnerClassLinksSpring[i]);
         }
     }
 
     //load weekly resources intermediate spring
     for(let i=0; i<IntermediateClassLinksSpring.length; i++){
-        if(message.content==='!Week-' + (i+1).toString() + '-intermediate'){
+        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${INTERMEDIATE}`){
             message.reply(IntermediateClassLinksSpring[i]);
         }
     }
 
-    //load weekly resources beginner spring
+    //load weekly resources advanced spring
     for(let i=0; i<AdvancedClassLinksSpring.length; i++){
-        if(message.content==='!Week-' + (i+1).toString() + '-advanced'){
+        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${ADVANCED}`){
             message.reply(AdvancedClassLinksSpring[i]);
         }
     }
 
-    //load weekly resources beginner spring
+    //load weekly resources english spring
     for(let i=0; i<EnglishClassLinksSpring.length; i++){
-        if(message.content==='!Week-' + (i+1).toString() + '-english'){
+        if(message.content===`${WEEK_PREFIX}`+ (i+1).toString() + '-' + `${ENGLISH}`){
             message.reply(EnglishClassLinksSpring[i]);
         }
     }
 
+    if(message.content==='!hiragana-sheet'){
+        message.reply(HiraganaSheet);
+    }
+
+    if(message.content === '!katakana-sheet'){
+        message.reply(KatakanaSheet);
+    }
+
     if(message.content === '!help'){
-        message.reply('Bot Cheatsheet: https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
+        message.reply('Bot Cheatsheet: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
     }
     
     if(message.content === 'k!sf scores') {
         message.reply('Jeffrey is the しりとりおおさま');
+        message.react('❓');
     }
 
     if(message.content === 'Jeffrey is the しりとりおおさま'){
