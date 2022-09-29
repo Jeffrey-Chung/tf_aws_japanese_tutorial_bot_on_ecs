@@ -77,7 +77,8 @@ client.on('messageCreate', message => {
      //remove beginner role
      if (message.member.roles.cache.some(role => role.name === 'Beginners')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${BEGINNER}`) {
-            message.member.roles.remove(`${BEGINNER_ID}`); 
+            const roleToRemove = message.guild.roles.cache.find(role => role.name === "Beginners");
+            message.member.roles.remove(roleToRemove); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
         }  
      }
@@ -85,7 +86,8 @@ client.on('messageCreate', message => {
     //remove intermediate role
     if (message.member.roles.cache.some(role => role.name === 'Intermediate')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${INTERMEDIATE}`) {
-            message.member.roles.remove(`${INTERMEDIATE_ID}`); 
+            const roleToRemove = message.guild.roles.cache.find(role => role.name === "Intermediate");
+            message.member.roles.remove(roleToRemove); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
         }
 
@@ -94,7 +96,8 @@ client.on('messageCreate', message => {
     //remove advanced role
     if (message.member.roles.cache.some(role => role.name === 'Advanced')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${ADVANCED}`) {
-            message.member.roles.remove(`${ADVANCED_ID}`); 
+            const roleToRemove = message.guild.roles.cache.find(role => role.name === "Advanced");
+            message.member.roles.remove(roleToRemove);  
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
         }
     }
@@ -102,7 +105,8 @@ client.on('messageCreate', message => {
     //remove english/study group role
     if (message.member.roles.cache.some(role => role.name === 'English')) {
         if (message.content === `${REMOVE_ROLE_PREFIX}${ENGLISH}`) {
-            message.member.roles.remove(`${ENGLISH_ID}`); 
+            const roleToRemove = message.guild.roles.cache.find(role => role.name === "English");
+            message.member.roles.remove(roleToRemove);  
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
         }
     }

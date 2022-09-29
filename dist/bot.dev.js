@@ -107,7 +107,10 @@ client.on('messageCreate', function (message) {
     return role.name === 'Beginners';
   })) {
     if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(BEGINNER)) {
-      message.member.roles.remove("".concat(BEGINNER_ID));
+      var roleToRemove = message.guild.roles.cache.find(function (role) {
+        return role.name === "Beginners";
+      });
+      message.member.roles.remove(roleToRemove);
       message.reply("".concat(BEGINNER).concat(REMOVE_FEEDBACK)); //feedback
     }
   } //remove intermediate role
@@ -117,7 +120,11 @@ client.on('messageCreate', function (message) {
     return role.name === 'Intermediate';
   })) {
     if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(INTERMEDIATE)) {
-      message.member.roles.remove("".concat(INTERMEDIATE_ID));
+      var _roleToRemove = message.guild.roles.cache.find(function (role) {
+        return role.name === "Intermediate";
+      });
+
+      message.member.roles.remove(_roleToRemove);
       message.reply("".concat(INTERMEDIATE).concat(REMOVE_FEEDBACK)); //feedback
     }
   } //remove advanced role
@@ -127,7 +134,11 @@ client.on('messageCreate', function (message) {
     return role.name === 'Advanced';
   })) {
     if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(ADVANCED)) {
-      message.member.roles.remove("".concat(ADVANCED_ID));
+      var _roleToRemove2 = message.guild.roles.cache.find(function (role) {
+        return role.name === "Advanced";
+      });
+
+      message.member.roles.remove(_roleToRemove2);
       message.reply("".concat(ADVANCED).concat(REMOVE_FEEDBACK)); //feedback
     }
   } //remove english/study group role
@@ -137,7 +148,11 @@ client.on('messageCreate', function (message) {
     return role.name === 'English';
   })) {
     if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(ENGLISH)) {
-      message.member.roles.remove("".concat(ENGLISH_ID));
+      var _roleToRemove3 = message.guild.roles.cache.find(function (role) {
+        return role.name === "English";
+      });
+
+      message.member.roles.remove(_roleToRemove3);
       message.reply("".concat(ENGLISH).concat(REMOVE_FEEDBACK)); //feedback
     }
   } //load weekly resources beginner spring
