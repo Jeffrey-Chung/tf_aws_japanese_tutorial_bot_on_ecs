@@ -101,7 +101,7 @@ client.on('messageCreate', message => {
     }
     if(message.content === '!Week-1-beginner')
     {
-        message.reply(BeginnerClassLinksSpring.week1);
+        message.reply(BeginnerClassLinksSpring[0]);
     }
     
     if(message.content === 'k!sf scores') {
