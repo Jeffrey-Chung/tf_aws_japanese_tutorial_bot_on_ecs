@@ -130,6 +130,10 @@ client.on('messageCreate', message => {
             message.reply(EnglishClassLinksSpring[i]);
         }
     }
+
+    if(message.content === '!help'){
+        message.reply('Bot Cheatsheet: https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
+    }
     
     if(message.content === 'k!sf scores') {
         message.reply('Jeffrey is the しりとりおおさま')
