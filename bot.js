@@ -44,6 +44,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.add(roleToGive); 
             message.reply(`${BEGINNER}${ADD_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
     }
 
@@ -53,6 +54,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.add(roleToGive); 
             message.reply(`${INTERMEDIATE}${ADD_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
 
      }
@@ -63,6 +65,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.add(roleToGive); 
             message.reply(`${ADVANCED}${ADD_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
      }
      
@@ -72,6 +75,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.add(roleToGive); 
             message.reply(`${ENGLISH}${ADD_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
      }
      
@@ -81,9 +85,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
         else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
             message.reply('You already added beginners role'); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }  
      }
     
@@ -93,9 +99,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
         else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
             message.reply('You already added intermediate role'); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         } 
     }
     
@@ -105,9 +113,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
         else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
             message.reply('You already added advanced role'); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         } 
     }
   
@@ -117,9 +127,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         }
         else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
             message.reply('You already added english/study group role'); //feedback
+            message.channel.send('type !help if you forgot any more commands');
         } 
     }
 
@@ -127,6 +139,7 @@ client.on('messageCreate', message => {
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${BEGINNER}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
+            message.channel.send('type !help if you forgot any more commands');
         }
     }
 
@@ -134,6 +147,7 @@ client.on('messageCreate', message => {
     for(let i=0; i<IntermediateClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${INTERMEDIATE}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + IntermediateClassLinksSpring[i]);
+            message.channel.send('type !help if you forgot any more commands');
         }
     }
 
@@ -141,6 +155,7 @@ client.on('messageCreate', message => {
     for(let i=0; i<AdvancedClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${ADVANCED}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + AdvancedClassLinksSpring[i]);
+            message.channel.send('type !help if you forgot any more commands');
         }
     }
 
@@ -148,15 +163,18 @@ client.on('messageCreate', message => {
     for(let i=0; i<EnglishClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}`+ (i+1).toString() + ' ' + `${ENGLISH}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + EnglishClassLinksSpring[i]);
+            message.channel.send('type !help if you forgot any more commands');
         }
     }
 
     if(message.content==='!hiragana-sheet'){
         message.reply(HiraganaSheet);
+        message.channel.send('type !help if you forgot any more commands');
     }
 
     if(message.content === '!katakana-sheet'){
         message.reply(KatakanaSheet);
+        message.channel.send('type !help if you forgot any more commands');
     }
 
     if(message.content === '!help'){

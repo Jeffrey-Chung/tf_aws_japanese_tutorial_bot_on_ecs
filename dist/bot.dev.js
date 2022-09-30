@@ -54,6 +54,8 @@ client.on('messageCreate', function (message) {
       });
       message.member.roles.add(roleToGive);
       message.reply("".concat(BEGINNER).concat(ADD_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //add intermediate role
 
@@ -68,6 +70,8 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.add(_roleToGive);
       message.reply("".concat(INTERMEDIATE).concat(ADD_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //add advanced role
 
@@ -82,6 +86,8 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.add(_roleToGive2);
       message.reply("".concat(ADVANCED).concat(ADD_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //add english/study group role
 
@@ -96,6 +102,8 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.add(_roleToGive3);
       message.reply("".concat(ENGLISH).concat(ADD_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //remove beginner role
 
@@ -109,8 +117,12 @@ client.on('messageCreate', function (message) {
       });
       message.member.roles.remove(roleToRemove);
       message.reply("".concat(BEGINNER).concat(REMOVE_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(BEGINNER)) {
       message.reply('You already added beginners role'); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //remove intermediate role
 
@@ -125,8 +137,12 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.remove(_roleToRemove);
       message.reply("".concat(INTERMEDIATE).concat(REMOVE_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(INTERMEDIATE)) {
       message.reply('You already added intermediate role'); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //remove advanced role
 
@@ -141,8 +157,12 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.remove(_roleToRemove2);
       message.reply("".concat(ADVANCED).concat(REMOVE_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(ADVANCED)) {
       message.reply('You already added advanced role'); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //remove english/study group role
 
@@ -157,8 +177,12 @@ client.on('messageCreate', function (message) {
 
       message.member.roles.remove(_roleToRemove3);
       message.reply("".concat(ENGLISH).concat(REMOVE_FEEDBACK)); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(ENGLISH)) {
       message.reply('You already added english/study group role'); //feedback
+
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //load weekly resources beginner spring
 
@@ -166,6 +190,7 @@ client.on('messageCreate', function (message) {
   for (var i = 0; i < BeginnerClassLinksSpring.length; i++) {
     if (message.content === "".concat(WEEK_PREFIX) + (i + 1).toString() + ' ' + "".concat(BEGINNER)) {
       message.reply('Week ' + (i + 1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //load weekly resources intermediate spring
 
@@ -173,6 +198,7 @@ client.on('messageCreate', function (message) {
   for (var _i = 0; _i < IntermediateClassLinksSpring.length; _i++) {
     if (message.content === "".concat(WEEK_PREFIX) + (_i + 1).toString() + ' ' + "".concat(INTERMEDIATE)) {
       message.reply('Week ' + (_i + 1).toString() + ' resources: ' + IntermediateClassLinksSpring[_i]);
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //load weekly resources advanced spring
 
@@ -180,6 +206,7 @@ client.on('messageCreate', function (message) {
   for (var _i2 = 0; _i2 < AdvancedClassLinksSpring.length; _i2++) {
     if (message.content === "".concat(WEEK_PREFIX) + (_i2 + 1).toString() + ' ' + "".concat(ADVANCED)) {
       message.reply('Week ' + (_i2 + 1).toString() + ' resources: ' + AdvancedClassLinksSpring[_i2]);
+      message.channel.send('type !help if you forgot any more commands');
     }
   } //load weekly resources english spring
 
@@ -187,15 +214,18 @@ client.on('messageCreate', function (message) {
   for (var _i3 = 0; _i3 < EnglishClassLinksSpring.length; _i3++) {
     if (message.content === "".concat(WEEK_PREFIX) + (_i3 + 1).toString() + ' ' + "".concat(ENGLISH)) {
       message.reply('Week ' + (_i3 + 1).toString() + ' resources: ' + EnglishClassLinksSpring[_i3]);
+      message.channel.send('type !help if you forgot any more commands');
     }
   }
 
   if (message.content === '!hiragana-sheet') {
     message.reply(HiraganaSheet);
+    message.channel.send('type !help if you forgot any more commands');
   }
 
   if (message.content === '!katakana-sheet') {
     message.reply(KatakanaSheet);
+    message.channel.send('type !help if you forgot any more commands');
   }
 
   if (message.content === '!help') {
