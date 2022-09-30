@@ -167,12 +167,12 @@ client.on('messageCreate', message => {
         }
     }
 
-    if(message.content==='!hiragana-sheet'){
+    if(message.content==='!hiragana sheet'){
         message.reply(HiraganaSheet);
         message.channel.send('type !help if you forgot any more commands');
     }
 
-    if(message.content === '!katakana-sheet'){
+    if(message.content === '!katakana sheet'){
         message.reply(KatakanaSheet);
         message.channel.send('type !help if you forgot any more commands');
     }
