@@ -126,28 +126,28 @@ client.on('messageCreate', message => {
     //load weekly resources beginner spring
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${BEGINNER}`){
-            message.reply(BeginnerClassLinksSpring[i]);
+            message.reply('Week ' + (i+1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
         }
     }
 
     //load weekly resources intermediate spring
     for(let i=0; i<IntermediateClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${INTERMEDIATE}`){
-            message.reply(IntermediateClassLinksSpring[i]);
+            message.reply('Week ' + (i+1).toString() + ' resources: ' + IntermediateClassLinksSpring[i]);
         }
     }
 
     //load weekly resources advanced spring
     for(let i=0; i<AdvancedClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${ADVANCED}`){
-            message.reply(AdvancedClassLinksSpring[i]);
+            message.reply('Week ' + (i+1).toString() + ' resources: ' + AdvancedClassLinksSpring[i]);
         }
     }
 
     //load weekly resources english spring
     for(let i=0; i<EnglishClassLinksSpring.length; i++){
         if(message.content===`${WEEK_PREFIX}`+ (i+1).toString() + '-' + `${ENGLISH}`){
-            message.reply(EnglishClassLinksSpring[i]);
+            message.reply('Week ' + (i+1).toString() + ' resources: ' + EnglishClassLinksSpring[i]);
         }
     }
 

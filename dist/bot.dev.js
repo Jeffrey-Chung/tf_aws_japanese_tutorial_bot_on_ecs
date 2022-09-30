@@ -165,28 +165,28 @@ client.on('messageCreate', function (message) {
 
   for (var i = 0; i < BeginnerClassLinksSpring.length; i++) {
     if (message.content === "".concat(WEEK_PREFIX) + (i + 1).toString() + '-' + "".concat(BEGINNER)) {
-      message.reply(BeginnerClassLinksSpring[i]);
+      message.reply('Week ' + (i + 1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
     }
   } //load weekly resources intermediate spring
 
 
   for (var _i = 0; _i < IntermediateClassLinksSpring.length; _i++) {
     if (message.content === "".concat(WEEK_PREFIX) + (_i + 1).toString() + '-' + "".concat(INTERMEDIATE)) {
-      message.reply(IntermediateClassLinksSpring[_i]);
+      message.reply('Week ' + (_i + 1).toString() + ' resources: ' + IntermediateClassLinksSpring[_i]);
     }
   } //load weekly resources advanced spring
 
 
   for (var _i2 = 0; _i2 < AdvancedClassLinksSpring.length; _i2++) {
     if (message.content === "".concat(WEEK_PREFIX) + (_i2 + 1).toString() + '-' + "".concat(ADVANCED)) {
-      message.reply(AdvancedClassLinksSpring[_i2]);
+      message.reply('Week ' + (_i2 + 1).toString() + ' resources: ' + AdvancedClassLinksSpring[_i2]);
     }
   } //load weekly resources english spring
 
 
   for (var _i3 = 0; _i3 < EnglishClassLinksSpring.length; _i3++) {
     if (message.content === "".concat(WEEK_PREFIX) + (_i3 + 1).toString() + '-' + "".concat(ENGLISH)) {
-      message.reply(EnglishClassLinksSpring[_i3]);
+      message.reply('Week ' + (_i3 + 1).toString() + ' resources: ' + EnglishClassLinksSpring[_i3]);
     }
   }
 
