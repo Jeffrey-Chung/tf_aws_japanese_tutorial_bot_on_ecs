@@ -21,17 +21,17 @@ const client = new Client({
 //const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
 
 //manage role prefixes
-const ADD_ROLE_PREFIX = '!add-';
-const REMOVE_ROLE_PREFIX = '!remove-';   
+const ADD_ROLE_PREFIX = '!add';
+const REMOVE_ROLE_PREFIX = '!remove';   
 const ADD_FEEDBACK = ' class role added';
 const REMOVE_FEEDBACK = ' class role removed';
-const WEEK_PREFIX = '!Week-';
+const WEEK_PREFIX = '!Week ';
 
 //types of classes
-const BEGINNER = 'beginners';
-const INTERMEDIATE = 'intermediate';
-const ADVANCED = 'advanced';
-const ENGLISH = 'english';
+const BEGINNER = 'Beginners';
+const INTERMEDIATE = 'Intermediate';
+const ADVANCED = 'Advanced';
+const ENGLISH = 'English';
 
 client.on('ready', () => {
     console.log('The bot is ready');
@@ -40,7 +40,7 @@ client.on('ready', () => {
 client.on('messageCreate', message => {
     //add beginner role
     if(!message.member.roles.cache.some(role => role.name === 'Beginners')){
-        if (message.content === `${ADD_ROLE_PREFIX}${BEGINNER}`) {
+        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.add(roleToGive); 
             message.reply(`${BEGINNER}${ADD_FEEDBACK}`); //feedback
@@ -49,7 +49,7 @@ client.on('messageCreate', message => {
 
      //add intermediate role
      if (!message.member.roles.cache.some(role => role.name === 'Intermediate')) {
-        if (message.content === `${ADD_ROLE_PREFIX}${INTERMEDIATE}`) {
+        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.add(roleToGive); 
             message.reply(`${INTERMEDIATE}${ADD_FEEDBACK}`); //feedback
@@ -59,7 +59,7 @@ client.on('messageCreate', message => {
     
      //add advanced role
      if (!message.member.roles.cache.some(role => role.name === 'Advanced')) {
-        if (message.content === `${ADD_ROLE_PREFIX}${ADVANCED}`) {
+        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.add(roleToGive); 
             message.reply(`${ADVANCED}${ADD_FEEDBACK}`); //feedback
@@ -68,7 +68,7 @@ client.on('messageCreate', message => {
      
      //add english/study group role
      if (!message.member.roles.cache.some(role => role.name === 'English')) {
-        if (message.content === `${ADD_ROLE_PREFIX}${ENGLISH}`) {
+        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.add(roleToGive); 
             message.reply(`${ENGLISH}${ADD_FEEDBACK}`); //feedback
@@ -77,76 +77,76 @@ client.on('messageCreate', message => {
      
      //remove beginner role
      if (message.member.roles.cache.some(role => role.name === 'Beginners')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}${BEGINNER}`) {
+        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}${BEGINNER}`) {
+        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
             message.reply('You already added beginners role'); //feedback
         }  
      }
     
     //remove intermediate role
     if (message.member.roles.cache.some(role => role.name === 'Intermediate')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}${INTERMEDIATE}`) {
+        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}${INTERMEDIATE}`) {
+        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
             message.reply('You already added intermediate role'); //feedback
         } 
     }
     
     //remove advanced role
     if (message.member.roles.cache.some(role => role.name === 'Advanced')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}${ADVANCED}`) {
+        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}${ADVANCED}`) {
+        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
             message.reply('You already added advanced role'); //feedback
         } 
     }
   
     //remove english/study group role
     if (message.member.roles.cache.some(role => role.name === 'English')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}${ENGLISH}`) {
+        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}${ENGLISH}`) {
+        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
             message.reply('You already added english/study group role'); //feedback
         } 
     }
 
     //load weekly resources beginner spring
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${BEGINNER}`){
+        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${BEGINNER}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
         }
     }
 
     //load weekly resources intermediate spring
     for(let i=0; i<IntermediateClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${INTERMEDIATE}`){
+        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${INTERMEDIATE}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + IntermediateClassLinksSpring[i]);
         }
     }
 
     //load weekly resources advanced spring
     for(let i=0; i<AdvancedClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + '-' + `${ADVANCED}`){
+        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${ADVANCED}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + AdvancedClassLinksSpring[i]);
         }
     }
 
     //load weekly resources english spring
     for(let i=0; i<EnglishClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}`+ (i+1).toString() + '-' + `${ENGLISH}`){
+        if(message.content===`${WEEK_PREFIX}`+ (i+1).toString() + ' ' + `${ENGLISH}`){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + EnglishClassLinksSpring[i]);
         }
     }
@@ -163,7 +163,7 @@ client.on('messageCreate', message => {
         message.reply('Bot Cheatsheet: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
     }
     
-    if(message.content === 'k!sf-forever') {
+    if(message.content === 'k!sf-score-jeffrey') {
         message.reply('Jeffrey is the しりとりおおさま');
         message.react('❓');
     }

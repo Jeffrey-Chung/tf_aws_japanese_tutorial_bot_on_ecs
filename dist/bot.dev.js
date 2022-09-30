@@ -30,16 +30,16 @@ var client = new Client({
 //const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
 //manage role prefixes
 
-var ADD_ROLE_PREFIX = '!add-';
-var REMOVE_ROLE_PREFIX = '!remove-';
+var ADD_ROLE_PREFIX = '!add';
+var REMOVE_ROLE_PREFIX = '!remove';
 var ADD_FEEDBACK = ' class role added';
 var REMOVE_FEEDBACK = ' class role removed';
-var WEEK_PREFIX = '!Week-'; //types of classes
+var WEEK_PREFIX = '!Week '; //types of classes
 
-var BEGINNER = 'beginners';
-var INTERMEDIATE = 'intermediate';
-var ADVANCED = 'advanced';
-var ENGLISH = 'english';
+var BEGINNER = 'Beginners';
+var INTERMEDIATE = 'Intermediate';
+var ADVANCED = 'Advanced';
+var ENGLISH = 'English';
 client.on('ready', function () {
   console.log('The bot is ready');
 });
@@ -48,7 +48,7 @@ client.on('messageCreate', function (message) {
   if (!message.member.roles.cache.some(function (role) {
     return role.name === 'Beginners';
   })) {
-    if (message.content === "".concat(ADD_ROLE_PREFIX).concat(BEGINNER)) {
+    if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(BEGINNER)) {
       var roleToGive = message.guild.roles.cache.find(function (role) {
         return role.name === "Beginners";
       });
@@ -61,7 +61,7 @@ client.on('messageCreate', function (message) {
   if (!message.member.roles.cache.some(function (role) {
     return role.name === 'Intermediate';
   })) {
-    if (message.content === "".concat(ADD_ROLE_PREFIX).concat(INTERMEDIATE)) {
+    if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(INTERMEDIATE)) {
       var _roleToGive = message.guild.roles.cache.find(function (role) {
         return role.name === "Intermediate";
       });
@@ -75,7 +75,7 @@ client.on('messageCreate', function (message) {
   if (!message.member.roles.cache.some(function (role) {
     return role.name === 'Advanced';
   })) {
-    if (message.content === "".concat(ADD_ROLE_PREFIX).concat(ADVANCED)) {
+    if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(ADVANCED)) {
       var _roleToGive2 = message.guild.roles.cache.find(function (role) {
         return role.name === "Advanced";
       });
@@ -89,7 +89,7 @@ client.on('messageCreate', function (message) {
   if (!message.member.roles.cache.some(function (role) {
     return role.name === 'English';
   })) {
-    if (message.content === "".concat(ADD_ROLE_PREFIX).concat(ENGLISH)) {
+    if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(ENGLISH)) {
       var _roleToGive3 = message.guild.roles.cache.find(function (role) {
         return role.name === "English";
       });
@@ -103,13 +103,13 @@ client.on('messageCreate', function (message) {
   if (message.member.roles.cache.some(function (role) {
     return role.name === 'Beginners';
   })) {
-    if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(BEGINNER)) {
+    if (message.content === "".concat(REMOVE_ROLE_PREFIX) + ' ' + "".concat(BEGINNER)) {
       var roleToRemove = message.guild.roles.cache.find(function (role) {
         return role.name === "Beginners";
       });
       message.member.roles.remove(roleToRemove);
       message.reply("".concat(BEGINNER).concat(REMOVE_FEEDBACK)); //feedback
-    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(BEGINNER)) {
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(BEGINNER)) {
       message.reply('You already added beginners role'); //feedback
     }
   } //remove intermediate role
@@ -118,14 +118,14 @@ client.on('messageCreate', function (message) {
   if (message.member.roles.cache.some(function (role) {
     return role.name === 'Intermediate';
   })) {
-    if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(INTERMEDIATE)) {
+    if (message.content === "".concat(REMOVE_ROLE_PREFIX) + ' ' + "".concat(INTERMEDIATE)) {
       var _roleToRemove = message.guild.roles.cache.find(function (role) {
         return role.name === "Intermediate";
       });
 
       message.member.roles.remove(_roleToRemove);
       message.reply("".concat(INTERMEDIATE).concat(REMOVE_FEEDBACK)); //feedback
-    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(INTERMEDIATE)) {
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(INTERMEDIATE)) {
       message.reply('You already added intermediate role'); //feedback
     }
   } //remove advanced role
@@ -134,14 +134,14 @@ client.on('messageCreate', function (message) {
   if (message.member.roles.cache.some(function (role) {
     return role.name === 'Advanced';
   })) {
-    if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(ADVANCED)) {
+    if (message.content === "".concat(REMOVE_ROLE_PREFIX) + ' ' + "".concat(ADVANCED)) {
       var _roleToRemove2 = message.guild.roles.cache.find(function (role) {
         return role.name === "Advanced";
       });
 
       message.member.roles.remove(_roleToRemove2);
       message.reply("".concat(ADVANCED).concat(REMOVE_FEEDBACK)); //feedback
-    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(ADVANCED)) {
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(ADVANCED)) {
       message.reply('You already added advanced role'); //feedback
     }
   } //remove english/study group role
@@ -150,42 +150,42 @@ client.on('messageCreate', function (message) {
   if (message.member.roles.cache.some(function (role) {
     return role.name === 'English';
   })) {
-    if (message.content === "".concat(REMOVE_ROLE_PREFIX).concat(ENGLISH)) {
+    if (message.content === "".concat(REMOVE_ROLE_PREFIX) + ' ' + "".concat(ENGLISH)) {
       var _roleToRemove3 = message.guild.roles.cache.find(function (role) {
         return role.name === "English";
       });
 
       message.member.roles.remove(_roleToRemove3);
       message.reply("".concat(ENGLISH).concat(REMOVE_FEEDBACK)); //feedback
-    } else if (message.content === "".concat(ADD_ROLE_PREFIX).concat(ENGLISH)) {
+    } else if (message.content === "".concat(ADD_ROLE_PREFIX) + ' ' + "".concat(ENGLISH)) {
       message.reply('You already added english/study group role'); //feedback
     }
   } //load weekly resources beginner spring
 
 
   for (var i = 0; i < BeginnerClassLinksSpring.length; i++) {
-    if (message.content === "".concat(WEEK_PREFIX) + (i + 1).toString() + '-' + "".concat(BEGINNER)) {
+    if (message.content === "".concat(WEEK_PREFIX) + (i + 1).toString() + ' ' + "".concat(BEGINNER)) {
       message.reply('Week ' + (i + 1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
     }
   } //load weekly resources intermediate spring
 
 
   for (var _i = 0; _i < IntermediateClassLinksSpring.length; _i++) {
-    if (message.content === "".concat(WEEK_PREFIX) + (_i + 1).toString() + '-' + "".concat(INTERMEDIATE)) {
+    if (message.content === "".concat(WEEK_PREFIX) + (_i + 1).toString() + ' ' + "".concat(INTERMEDIATE)) {
       message.reply('Week ' + (_i + 1).toString() + ' resources: ' + IntermediateClassLinksSpring[_i]);
     }
   } //load weekly resources advanced spring
 
 
   for (var _i2 = 0; _i2 < AdvancedClassLinksSpring.length; _i2++) {
-    if (message.content === "".concat(WEEK_PREFIX) + (_i2 + 1).toString() + '-' + "".concat(ADVANCED)) {
+    if (message.content === "".concat(WEEK_PREFIX) + (_i2 + 1).toString() + ' ' + "".concat(ADVANCED)) {
       message.reply('Week ' + (_i2 + 1).toString() + ' resources: ' + AdvancedClassLinksSpring[_i2]);
     }
   } //load weekly resources english spring
 
 
   for (var _i3 = 0; _i3 < EnglishClassLinksSpring.length; _i3++) {
-    if (message.content === "".concat(WEEK_PREFIX) + (_i3 + 1).toString() + '-' + "".concat(ENGLISH)) {
+    if (message.content === "".concat(WEEK_PREFIX) + (_i3 + 1).toString() + ' ' + "".concat(ENGLISH)) {
       message.reply('Week ' + (_i3 + 1).toString() + ' resources: ' + EnglishClassLinksSpring[_i3]);
     }
   }
@@ -202,7 +202,7 @@ client.on('messageCreate', function (message) {
     message.reply('Bot Cheatsheet: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing');
   }
 
-  if (message.content === 'k!sf-forever') {
+  if (message.content === 'k!sf-score-jeffrey') {
     message.reply('Jeffrey is the しりとりおおさま');
     message.react('❓');
   }
