@@ -40,7 +40,7 @@ client.on('ready', () => {
 client.on('messageCreate', message => {
     //add beginner role
     if(!message.member.roles.cache.some(role => role.name === 'Beginners')){
-        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
+        if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`.toLowerCase()) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.add(roleToGive); 
             message.reply(`${BEGINNER}${ADD_FEEDBACK}`); //feedback
@@ -50,7 +50,7 @@ client.on('messageCreate', message => {
 
      //add intermediate role
      if (!message.member.roles.cache.some(role => role.name === 'Intermediate')) {
-        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
+        if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`.toLowerCase()) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.add(roleToGive); 
             message.reply(`${INTERMEDIATE}${ADD_FEEDBACK}`); //feedback
@@ -61,7 +61,7 @@ client.on('messageCreate', message => {
     
      //add advanced role
      if (!message.member.roles.cache.some(role => role.name === 'Advanced')) {
-        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
+        if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`.toLowerCase()) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.add(roleToGive); 
             message.reply(`${ADVANCED}${ADD_FEEDBACK}`); //feedback
@@ -71,7 +71,7 @@ client.on('messageCreate', message => {
      
      //add english/study group role
      if (!message.member.roles.cache.some(role => role.name === 'English')) {
-        if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
+        if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`.toLowerCase()) {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.add(roleToGive); 
             message.reply(`${ENGLISH}${ADD_FEEDBACK}`); //feedback
@@ -81,13 +81,13 @@ client.on('messageCreate', message => {
      
      //remove beginner role
      if (message.member.roles.cache.some(role => role.name === 'Beginners')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
+        if (message.content.toLowerCase() === `${REMOVE_ROLE_PREFIX}` + ' ' + `${BEGINNER}`.toLowerCase()) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
             message.channel.send('type !help if you forgot any more commands');
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`) {
+        else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`.toLowerCase()) {
             message.reply('You already added beginners role'); //feedback
             message.channel.send('type !help if you forgot any more commands');
         }  
@@ -95,13 +95,13 @@ client.on('messageCreate', message => {
     
     //remove intermediate role
     if (message.member.roles.cache.some(role => role.name === 'Intermediate')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
+        if (message.content.toLowerCase() === `${REMOVE_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`.toLowerCase()) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
             message.channel.send('type !help if you forgot any more commands');
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`) {
+        else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`.toLowerCase()) {
             message.reply('You already added intermediate role'); //feedback
             message.channel.send('type !help if you forgot any more commands');
         } 
@@ -109,13 +109,13 @@ client.on('messageCreate', message => {
     
     //remove advanced role
     if (message.member.roles.cache.some(role => role.name === 'Advanced')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
+        if (message.content.toLowerCase() === `${REMOVE_ROLE_PREFIX}` + ' ' + `${ADVANCED}`.toLowerCase()) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
             message.channel.send('type !help if you forgot any more commands');
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`) {
+        else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`.toLowerCase()) {
             message.reply('You already added advanced role'); //feedback
             message.channel.send('type !help if you forgot any more commands');
         } 
@@ -123,13 +123,13 @@ client.on('messageCreate', message => {
   
     //remove english/study group role
     if (message.member.roles.cache.some(role => role.name === 'English')) {
-        if (message.content === `${REMOVE_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
+        if (message.content.toLowerCase() === `${REMOVE_ROLE_PREFIX}` + ' ' + `${ENGLISH}`.toLowerCase()) {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
             message.channel.send('type !help if you forgot any more commands');
         }
-        else if (message.content === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`) {
+        else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`.toLowerCase()) {
             message.reply('You already added english/study group role'); //feedback
             message.channel.send('type !help if you forgot any more commands');
         } 
@@ -137,7 +137,7 @@ client.on('messageCreate', message => {
 
     //load weekly resources beginner spring
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${BEGINNER}`){
+        if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase() + (i+1).toString() + ' ' + `${BEGINNER}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
             message.channel.send('type !help if you forgot any more commands');
         }
@@ -145,7 +145,7 @@ client.on('messageCreate', message => {
 
     //load weekly resources intermediate spring
     for(let i=0; i<IntermediateClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${INTERMEDIATE}`){
+        if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase() + (i+1).toString() + ' ' + `${INTERMEDIATE}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + IntermediateClassLinksSpring[i]);
             message.channel.send('type !help if you forgot any more commands');
         }
@@ -153,7 +153,7 @@ client.on('messageCreate', message => {
 
     //load weekly resources advanced spring
     for(let i=0; i<AdvancedClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}` + (i+1).toString() + ' ' + `${ADVANCED}`){
+        if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase() + (i+1).toString() + ' ' + `${ADVANCED}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + AdvancedClassLinksSpring[i]);
             message.channel.send('type !help if you forgot any more commands');
         }
@@ -161,23 +161,23 @@ client.on('messageCreate', message => {
 
     //load weekly resources english spring
     for(let i=0; i<EnglishClassLinksSpring.length; i++){
-        if(message.content===`${WEEK_PREFIX}`+ (i+1).toString() + ' ' + `${ENGLISH}`){
+        if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase()+ (i+1).toString() + ' ' + `${ENGLISH}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + EnglishClassLinksSpring[i]);
             message.channel.send('type !help if you forgot any more commands');
         }
     }
 
-    if(message.content==='!hiragana sheet'){
+    if(message.content.toLowerCase()==='!hiragana sheet'.toLowerCase()){
         message.reply(HiraganaSheet);
         message.channel.send('type !help if you forgot any more commands');
     }
 
-    if(message.content === '!katakana sheet'){
+    if(message.content.toLowerCase() === '!katakana sheet'.toLowerCase()){
         message.reply(KatakanaSheet);
         message.channel.send('type !help if you forgot any more commands');
     }
 
-    if(message.content === '!help'){
+    if(message.content.toLowerCase() === '!help'.toLowerCase()){
         message.reply('Bot Cheatsheet: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
     }
     
