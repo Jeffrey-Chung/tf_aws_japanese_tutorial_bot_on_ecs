@@ -3,13 +3,14 @@ How to use bot:
 There are 2 functionalities of this bot: add/remove roles + load resources for language classes
 (Note all commands are space sensitive but NOT case sensitive)
 Class Name: Beginners, Intermediate, Advanced, English
-----------------------------------------------------------------------------------------------------------
+
 Add/Remove roles:
 ----------------------------------------------------------------------------------------------------------
 How to add a role: !add <Class Name>  (i.e. !add Beginners, !add Intermediate etc.) 
 How to remove your role: !remove <Class Name> (i.e. !remove English, !remove Advanced etc.) 
 ----------------------------------------------------------------------------------------------------------
 Load class resources for language classes:
+----------------------------------------------------------------------------------------------------------
 Instead of posting it on Discord just like on the Language Class FB group, you can type a command to load the ppt slides of any week as you desire. Links will be updated right after I posted on FB group.
 
 How to load resources of any week: !Week <week number> <Class Name> 
