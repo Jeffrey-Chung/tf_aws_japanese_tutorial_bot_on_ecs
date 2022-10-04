@@ -6,14 +6,14 @@ Class Name: Beginners, Intermediate, Advanced, English
 
 Add/Remove roles:
 ----------------------------------------------------------------------------------------------------------
-- How to add a role: !add <Class Name>  (i.e. !add Beginners, !add Intermediate etc.) 
-- How to remove your role: !remove <Class Name> (i.e. !remove English, !remove Advanced etc.) 
+- How to add a role: !add Class (i.e. !add Beginners, !add Intermediate etc.) 
+- How to remove your role: !remove Class (i.e. !remove English, !remove Advanced etc.) 
 
 Load class resources for language classes:
 ----------------------------------------------------------------------------------------------------------
 Instead of posting it on Discord just like on the Language Class FB group, you can type a command to load the ppt slides of any week as you desire. Links will be updated right after I posted on FB group.
 
-How to load resources of any week: !Week <week number> <Class Name> 
+How to load resources of any week: !Week [week number] Class Name
 (For Example:
  - !Week 1 Beginners loads resources from the first lesson of beginners class 
  - !Week 5 Advanced loads resources from the 5th class of the advanced class)
