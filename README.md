@@ -1,8 +1,8 @@
 # language-bot-test
 How to use bot: 
-There are 2 functionalities of this bot: add/remove roles + load resources for language classes
-(Note all commands are space sensitive but NOT case sensitive)
-Class Name: Beginners, Intermediate, Advanced, English
+- There are 2 functionalities of this bot: add/remove roles + load resources for language classes
+- (Note all commands are space sensitive but NOT case sensitive)
+- Class Name: Beginners, Intermediate, Advanced, English
 
 Add/Remove roles:
 ----------------------------------------------------------------------------------------------------------
@@ -32,5 +32,5 @@ For Spring 2022:
 For Beginners Specifically: 
 How to load hiragana sheets: !hiragana sheet
 How to load katakana sheets: !katakana sheet
-----------------------------------------------------------------------------------------------------------
+
 For any more help type: !help 
