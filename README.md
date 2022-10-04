@@ -26,7 +26,7 @@ Week 6 = 6th Lesson (Week 8 for Eng + Adv, Week 9 for Int + Beg)
 Week 7 = 7th Lesson (Week 9 for Eng + Adv, Week 10 for Int + Beg)
 Week 8 = 8th Lesson (Week 10 for Eng + Adv, Week 9 for Int + Beg)
 Week 9 = 9th/last lesson (Week 11 for Eng + Adv, Week 12 for Int + Beg)
-
+----------------------------------------------------------------------------------------------------------
 For Beginners Specifically: 
 How to load hiragana sheets: !hiragana sheet
 How to load katakana sheets: !katakana sheet
