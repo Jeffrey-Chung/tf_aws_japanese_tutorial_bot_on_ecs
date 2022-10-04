@@ -5,6 +5,7 @@ There are 2 functionalities of this bot: add/remove roles + load resources for l
 Class Name: Beginners, Intermediate, Advanced, English
 ----------------------------------------------------------------------------------------------------------
 Add/Remove roles:
+----------------------------------------------------------------------------------------------------------
 How to add a role: !add <Class Name>  (i.e. !add Beginners, !add Intermediate etc.) 
 How to remove your role: !remove <Class Name> (i.e. !remove English, !remove Advanced etc.) 
 ----------------------------------------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Week 6 = 6th Lesson (Week 8 for Eng + Adv, Week 9 for Int + Beg)
 Week 7 = 7th Lesson (Week 9 for Eng + Adv, Week 10 for Int + Beg)
 Week 8 = 8th Lesson (Week 10 for Eng + Adv, Week 9 for Int + Beg)
 Week 9 = 9th/last lesson (Week 11 for Eng + Adv, Week 12 for Int + Beg)
-----------------------------------------------------------------------------------------------------------
+
 For Beginners Specifically: 
 How to load hiragana sheets: !hiragana sheet
 How to load katakana sheets: !katakana sheet
