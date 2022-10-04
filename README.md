@@ -18,15 +18,15 @@ How to load resources of any week: !Week <week number> <Class Name>
  - !Week 5 Advanced loads resources from the 5th class of the advanced class)
 
 For Spring 2022:
-Week 1 = 1st Lesson (Week 3)
-Week 2 = 2nd Lesson (Week 4)
-Week 3 = 3rd Lesson (Week 5)
-Week 4 = 4th Lesson (Week 6)
-Week 5 = 5th Lesson (Week 7)
-Week 6 = 6th Lesson (Week 8 for Eng + Adv, Week 9 for Int + Beg)
-Week 7 = 7th Lesson (Week 9 for Eng + Adv, Week 10 for Int + Beg)
-Week 8 = 8th Lesson (Week 10 for Eng + Adv, Week 9 for Int + Beg)
-Week 9 = 9th/last lesson (Week 11 for Eng + Adv, Week 12 for Int + Beg)
+- Week 1 = 1st Lesson (Week 3)
+- Week 2 = 2nd Lesson (Week 4)
+- Week 3 = 3rd Lesson (Week 5)
+- Week 4 = 4th Lesson (Week 6)
+- Week 5 = 5th Lesson (Week 7)
+- Week 6 = 6th Lesson (Week 8 for Eng + Adv, Week 9 for Int + Beg)
+- Week 7 = 7th Lesson (Week 9 for Eng + Adv, Week 10 for Int + Beg)
+- Week 8 = 8th Lesson (Week 10 for Eng + Adv, Week 9 for Int + Beg)
+- Week 9 = 9th/last lesson (Week 11 for Eng + Adv, Week 12 for Int + Beg)
 
 For Beginners Specifically: 
 How to load hiragana sheets: !hiragana sheet
