@@ -6,8 +6,8 @@ Class Name: Beginners, Intermediate, Advanced, English
 
 Add/Remove roles:
 ----------------------------------------------------------------------------------------------------------
-How to add a role: !add <Class Name>  (i.e. !add Beginners, !add Intermediate etc.) 
-How to remove your role: !remove <Class Name> (i.e. !remove English, !remove Advanced etc.) 
+- How to add a role: !add <Class Name>  (i.e. !add Beginners, !add Intermediate etc.) 
+- How to remove your role: !remove <Class Name> (i.e. !remove English, !remove Advanced etc.) 
 
 Load class resources for language classes:
 ----------------------------------------------------------------------------------------------------------
