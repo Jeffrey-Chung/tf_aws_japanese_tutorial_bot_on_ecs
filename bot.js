@@ -44,7 +44,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.add(roleToGive); 
             message.reply(`${BEGINNER}${ADD_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
     }
 
@@ -54,7 +54,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.add(roleToGive); 
             message.reply(`${INTERMEDIATE}${ADD_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
 
      }
@@ -65,7 +65,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.add(roleToGive); 
             message.reply(`${ADVANCED}${ADD_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
      }
      
@@ -75,7 +75,7 @@ client.on('messageCreate', message => {
             const roleToGive = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.add(roleToGive); 
             message.reply(`${ENGLISH}${ADD_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
      }
      
@@ -85,11 +85,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Beginners");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${BEGINNER}${REMOVE_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
         else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${BEGINNER}`.toLowerCase()) {
             message.reply('You already added beginners role'); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }  
      }
     
@@ -99,11 +99,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Intermediate");
             message.member.roles.remove(roleToRemove); 
             message.reply(`${INTERMEDIATE}${REMOVE_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
         else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${INTERMEDIATE}`.toLowerCase()) {
             message.reply('You already added intermediate role'); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         } 
     }
     
@@ -113,11 +113,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "Advanced");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ADVANCED}${REMOVE_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
         else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${ADVANCED}`.toLowerCase()) {
             message.reply('You already added advanced role'); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         } 
     }
   
@@ -127,11 +127,11 @@ client.on('messageCreate', message => {
             const roleToRemove = message.guild.roles.cache.find(role => role.name === "English");
             message.member.roles.remove(roleToRemove);  
             message.reply(`${ENGLISH}${REMOVE_FEEDBACK}`); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
         else if (message.content.toLowerCase() === `${ADD_ROLE_PREFIX}` + ' ' + `${ENGLISH}`.toLowerCase()) {
             message.reply('You already added english/study group role'); //feedback
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         } 
     }
 
@@ -139,7 +139,7 @@ client.on('messageCreate', message => {
     for(let i=0; i<BeginnerClassLinksSpring.length; i++){
         if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase() + (i+1).toString() + ' ' + `${BEGINNER}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + BeginnerClassLinksSpring[i]);
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
     }
 
@@ -147,7 +147,7 @@ client.on('messageCreate', message => {
     for(let i=0; i<IntermediateClassLinksSpring.length; i++){
         if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase() + (i+1).toString() + ' ' + `${INTERMEDIATE}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + IntermediateClassLinksSpring[i]);
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
     }
 
@@ -155,7 +155,7 @@ client.on('messageCreate', message => {
     for(let i=0; i<AdvancedClassLinksSpring.length; i++){
         if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase() + (i+1).toString() + ' ' + `${ADVANCED}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + AdvancedClassLinksSpring[i]);
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
     }
 
@@ -163,21 +163,21 @@ client.on('messageCreate', message => {
     for(let i=0; i<EnglishClassLinksSpring.length; i++){
         if(message.content.toLowerCase()===`${WEEK_PREFIX}`.toLowerCase()+ (i+1).toString() + ' ' + `${ENGLISH}`.toLowerCase()){
             message.reply('Week ' + (i+1).toString() + ' resources: ' + EnglishClassLinksSpring[i]);
-            message.channel.send('type "!help language bot" if you forgot any more commands');
+            message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
     }
 
     if(message.content.toLowerCase()==='!hiragana sheet'.toLowerCase()){
         message.reply(HiraganaSheet);
-        message.channel.send('type "!help language bot" if you forgot any more commands');
+        message.channel.send('type "!help-language-bot" if you forgot any more commands');
     }
 
     if(message.content.toLowerCase() === '!katakana sheet'.toLowerCase()){
         message.reply(KatakanaSheet);
-        message.channel.send('type "!help language bot" if you forgot any more commands');
+        message.channel.send('type "!help-language-bot" if you forgot any more commands');
     }
 
-    if(message.content.toLowerCase() === '!help language bot'.toLowerCase()){
+    if(message.content.toLowerCase() === '!help-language-bot'.toLowerCase()){
         message.reply('Bot Cheatsheet: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
     }
     
