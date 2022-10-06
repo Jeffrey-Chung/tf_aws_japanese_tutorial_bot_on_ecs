@@ -31,7 +31,7 @@ var client = new Client({
 //manage role prefixes
 
 var ADD_ROLE_PREFIX = '!add';
-var REMOVE_ROLE_PREFIX = '!remove';
+var REMOVE_ROLE_PREFIX = '!rmv';
 var ADD_FEEDBACK = ' class role added';
 var REMOVE_FEEDBACK = ' class role removed';
 var WEEK_PREFIX = '!Week '; //types of classes

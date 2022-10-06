@@ -22,7 +22,7 @@ const client = new Client({
 
 //manage role prefixes
 const ADD_ROLE_PREFIX = '!add';
-const REMOVE_ROLE_PREFIX = '!remove';   
+const REMOVE_ROLE_PREFIX = '!rmv';   
 const ADD_FEEDBACK = ' class role added';
 const REMOVE_FEEDBACK = ' class role removed';
 const WEEK_PREFIX = '!Week ';
