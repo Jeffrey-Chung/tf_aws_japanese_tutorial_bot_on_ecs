@@ -12,7 +12,7 @@ var AdvancedClassLinksSpring= [
     //week 6 link
     "https://docs.google.com/presentation/d/1b-OVlmMytpWVtc28FKC7HkLQLiO-lIPow85IdNptW3w/edit?usp=sharing",
     //week 7 link
-    "Not yet available",
+    "https://docs.google.com/presentation/d/1Jiu2FG0P5UTEmN86SIhityryGKluq24DLOJW4bA-QqY/edit?usp=sharing",
     //week 8 link
     "Not yet available",
     //week 9 link

@@ -10,7 +10,7 @@ var IntermediateClassLinksSpring= [
     //week 5 link
     "https://drive.google.com/drive/folders/1gy_VfeJcQRcckiyO8qjt_-egD4CU35pT?usp=sharing",
     //week 6 link
-    "Not yet available",
+    "https://drive.google.com/drive/folders/195TUqV-aaTrAsTcYUxysStopN5GbM0BM?usp=sharing",
     //week 7 link
     "Not yet available",
     //week 8 link

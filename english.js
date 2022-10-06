@@ -12,7 +12,7 @@ var EnglishClassLinksSpring= [
     //week 6 link
     "https://docs.google.com/presentation/d/1pK9h0KESkTf81nxqYAA7lVTVjAaYdv9wNul0EiVn9mc/edit?usp=sharing",
     //week 7 link
-    "Not yet available",
+    "Type '!Week 6 English', it's the same as last week",
     //week 8 link
     "Not yet available",
     //week 9 link
