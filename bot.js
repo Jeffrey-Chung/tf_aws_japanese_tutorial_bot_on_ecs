@@ -48,6 +48,7 @@ client.on('messageCreate', message => {
     .setThumbnail('https://scontent.fsyd4-1.fna.fbcdn.net/v/t39.30808-6/300519002_5334389690007910_6903679430506030642_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=8631f5&_nc_ohc=6lsZOarXQYYAX8RSjzv&_nc_ht=scontent.fsyd4-1.fna&oh=00_AT_9bqLZR-Qmd7rCBkZXKbKcqObS1BnvqEwWfHxWdt0HVg&oe=634419EB')
 	.addFields(
         { name: 'Class Names', value: 'Beginners, Intermediate, Advanced, English', inline: true },
+        { name: 'Week Numbers', value: '1, 2, 3, 4, 5, 6, 7, 8, 9'},
         { name: '\u200B', value: '\u200B' }, //blank space
 		{ name: 'Add Command', value: '!add <Class Name>'},
 		{ name: 'Remove Command', value: '!remove <Class Name>' },
