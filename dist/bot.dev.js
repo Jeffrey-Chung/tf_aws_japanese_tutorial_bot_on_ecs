@@ -18,12 +18,15 @@ var _require4 = require('./english.js'),
 
 var _require5 = require('discord.js'),
     Client = _require5.Client,
-    GatewayIntentBits = _require5.GatewayIntentBits;
+    GatewayIntentBits = _require5.GatewayIntentBits,
+    EmbedBuilder = _require5.EmbedBuilder,
+    AttachmentBuilder = _require5.AttachmentBuilder;
 
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
   partials: ["MESSAGE", "REACTION"]
-}); //class IDs
+});
+var file = new AttachmentBuilder('JASS Language Classes FB Sem2 .png'); //class IDs
 //const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
 //const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
 //const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
@@ -44,7 +47,39 @@ client.on('ready', function () {
   console.log('The bot is ready');
 });
 client.on('messageCreate', function (message) {
-  //add beginner role
+  //make improved, easier help manual
+  var helpEmbed = new EmbedBuilder().setColor(0x0099FF).setURL('https://discord.js.org/').setAuthor({
+    name: 'Help Guide'
+  }).setThumbnail('https://scontent.fsyd4-1.fna.fbcdn.net/v/t39.30808-6/300519002_5334389690007910_6903679430506030642_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=8631f5&_nc_ohc=6lsZOarXQYYAX8RSjzv&_nc_ht=scontent.fsyd4-1.fna&oh=00_AT_9bqLZR-Qmd7rCBkZXKbKcqObS1BnvqEwWfHxWdt0HVg&oe=634419EB').addFields({
+    name: 'Class Names',
+    value: 'Beginners, Intermediate, Advanced, English',
+    inline: true
+  }, {
+    name: "\u200B",
+    value: "\u200B"
+  }, //blank space
+  {
+    name: 'Add Command',
+    value: '!add <Class Name>'
+  }, {
+    name: 'Remove Command',
+    value: '!remove <Class Name>'
+  }, {
+    name: 'Load Slides',
+    value: '!Week <Week number> <Class Name>'
+  }, {
+    name: 'Hiragana Sheet',
+    value: '!Hiragana Sheet'
+  }, {
+    name: 'Katakana Sheet',
+    value: '!Katakana Sheet'
+  }, {
+    name: 'Help Command',
+    value: '!help-language-bot'
+  }).setFooter({
+    text: 'All commands are space sensitive, but NOT case sensitive, make sure spelling is all correct'
+  }); //add beginner role
+
   if (!message.member.roles.cache.some(function (role) {
     return role.name === 'Beginners';
   })) {
@@ -229,7 +264,10 @@ client.on('messageCreate', function (message) {
   }
 
   if (message.content.toLowerCase() === '!help-language-bot'.toLowerCase()) {
-    message.reply('Bot Cheatsheet: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing');
+    message.reply({
+      embeds: [helpEmbed]
+    });
+    message.channel.send('For more information see: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing');
   }
 
   if (message.content === 'k!sf-score-jeffrey') {
