@@ -4,7 +4,7 @@ const {BeginnerClassLinksSpring, HiraganaSheet, KatakanaSheet} = require('./begi
 const {IntermediateClassLinksSpring} = require('./intermediate.js');
 const {AdvancedClassLinksSpring} = require('./advanced.js');
 const {EnglishClassLinksSpring} = require('./english.js');
-const { Client, GatewayIntentBits, EmbedBuilder, AttachmentBuilder } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
@@ -14,7 +14,6 @@ const client = new Client({
     partials: ["MESSAGE", "REACTION"]
 });
 
-const file = new AttachmentBuilder('JASS Language Classes FB Sem2 .png');
 
 //class IDs
 //const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server

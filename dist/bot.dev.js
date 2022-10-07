@@ -19,14 +19,12 @@ var _require4 = require('./english.js'),
 var _require5 = require('discord.js'),
     Client = _require5.Client,
     GatewayIntentBits = _require5.GatewayIntentBits,
-    EmbedBuilder = _require5.EmbedBuilder,
-    AttachmentBuilder = _require5.AttachmentBuilder;
+    EmbedBuilder = _require5.EmbedBuilder;
 
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
   partials: ["MESSAGE", "REACTION"]
-});
-var file = new AttachmentBuilder('JASS Language Classes FB Sem2 .png'); //class IDs
+}); //class IDs
 //const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
 //const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
 //const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
