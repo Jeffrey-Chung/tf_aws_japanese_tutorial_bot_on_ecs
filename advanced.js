@@ -14,7 +14,7 @@ var AdvancedClassLinksSpring= [
     //week 7 link
     "https://docs.google.com/presentation/d/1Jiu2FG0P5UTEmN86SIhityryGKluq24DLOJW4bA-QqY/edit?usp=sharing",
     //week 8 link
-    "Not yet available",
+    "https://drive.google.com/drive/folders/1UloDUTC7NsWB2xxmeQcC08rKLjYryDZ9?usp=sharing",
     //week 9 link
     "Not yet available"
  ];

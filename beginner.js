@@ -12,7 +12,7 @@
         //week 6 link
         "https://docs.google.com/presentation/d/1ThmjkxcVnkN109HefzGpGVoSkGQHUMOg/edit?usp=sharing&ouid=110525019892277217701&rtpof=true&sd=true",
         //week 7 link
-        "Not yet available",
+        "https://docs.google.com/presentation/d/1nvlyZi72xY-rTbVjbgtdajtbg4N-6hU9/edit?usp=sharing&ouid=110525019892277217701&rtpof=true&sd=true",
         //week 8 link
         "Not yet available",
         //week 9 link

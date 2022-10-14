@@ -8,7 +8,7 @@ var EnglishClassLinksSpring = [//week 1 link
 "https://docs.google.com/presentation/d/1Eqz-1xrT9nBove7fSY7T2dDkdgfamd2D4JzwDja0W-w/edit?usp=sharing", //week 6 link
 "https://docs.google.com/presentation/d/1pK9h0KESkTf81nxqYAA7lVTVjAaYdv9wNul0EiVn9mc/edit?usp=sharing", //week 7 link
 "Type '!Week 6 English', it's the same as last week", //week 8 link
-"Not yet available", //week 9 link
+"https://docs.google.com/presentation/d/12O5-vNn_c6-Y7CyLH0-2ilUNcNlK9Ai8zpJ995ZfqQU/edit?usp=sharing", //week 9 link
 "Not yet available"];
 module.exports = {
   EnglishClassLinksSpring: EnglishClassLinksSpring

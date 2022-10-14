@@ -8,7 +8,7 @@ var AdvancedClassLinksSpring = [//week 1 link
 "https://drive.google.com/drive/folders/1BJ5SyU9pllVbrUO0gFpxn3UwDAnhQ6zu?usp=sharing", //week 6 link
 "https://docs.google.com/presentation/d/1b-OVlmMytpWVtc28FKC7HkLQLiO-lIPow85IdNptW3w/edit?usp=sharing", //week 7 link
 "https://docs.google.com/presentation/d/1Jiu2FG0P5UTEmN86SIhityryGKluq24DLOJW4bA-QqY/edit?usp=sharing", //week 8 link
-"Not yet available", //week 9 link
+"https://drive.google.com/drive/folders/1UloDUTC7NsWB2xxmeQcC08rKLjYryDZ9?usp=sharing", //week 9 link
 "Not yet available"];
 module.exports = {
   AdvancedClassLinksSpring: AdvancedClassLinksSpring

@@ -12,7 +12,7 @@ var IntermediateClassLinksSpring= [
     //week 6 link
     "https://drive.google.com/drive/folders/195TUqV-aaTrAsTcYUxysStopN5GbM0BM?usp=sharing",
     //week 7 link
-    "Not yet available",
+    "Class was cancelled apologies for any inconvenience",
     //week 8 link
     "Not yet available",
     //week 9 link

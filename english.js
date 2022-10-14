@@ -14,7 +14,7 @@ var EnglishClassLinksSpring= [
     //week 7 link
     "Type '!Week 6 English', it's the same as last week",
     //week 8 link
-    "Not yet available",
+    "https://docs.google.com/presentation/d/12O5-vNn_c6-Y7CyLH0-2ilUNcNlK9Ai8zpJ995ZfqQU/edit?usp=sharing",
     //week 9 link
     "Not yet available"
  ];
