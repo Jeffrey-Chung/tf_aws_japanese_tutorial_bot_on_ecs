@@ -16,7 +16,7 @@ var AdvancedClassLinksSpring= [
     //week 8 link
     "https://drive.google.com/drive/folders/1UloDUTC7NsWB2xxmeQcC08rKLjYryDZ9?usp=sharing",
     //week 9 link
-    "Not yet available"
+    "https://drive.google.com/drive/folders/1UloDUTC7NsWB2xxmeQcC08rKLjYryDZ9?usp=sharing"
  ];
 
  module.exports = {AdvancedClassLinksSpring};

@@ -16,7 +16,7 @@ var EnglishClassLinksSpring= [
     //week 8 link
     "https://docs.google.com/presentation/d/12O5-vNn_c6-Y7CyLH0-2ilUNcNlK9Ai8zpJ995ZfqQU/edit?usp=sharing",
     //week 9 link
-    "Not yet available"
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
  ];
 
  module.exports = {EnglishClassLinksSpring};
