@@ -202,7 +202,7 @@ client.on('messageCreate', message => {
                 clearInterval(downloadTimer);
                 //send the correct answer if time runs out + incorrect/no answer
                 if(CORRECT_ANSWER == false) {
-                    message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+                    message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!");
                     RANDOM = -1;
                 }
                 //correct answer + time runs out -> set back the correct answer boolean to false
@@ -214,10 +214,10 @@ client.on('messageCreate', message => {
         }, 1000);
         GUESS_SPONSOR = false; //game officially finish
     }
-    
+
     //part 2.5: if correct answer is guessed
     if(message.content.toLowerCase() === `${SponsorNames[RANDOM]}`.toLowerCase()){
-        message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+        message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!");
         CORRECT_ANSWER = true;
         RANDOM = -1;
     }
