@@ -16,15 +16,22 @@ var _require3 = require('./advanced.js'),
 var _require4 = require('./english.js'),
     EnglishClassLinksSpring = _require4.EnglishClassLinksSpring;
 
-var _require5 = require('discord.js'),
-    Client = _require5.Client,
-    GatewayIntentBits = _require5.GatewayIntentBits,
-    EmbedBuilder = _require5.EmbedBuilder;
+var _require5 = require('./sponsors.js'),
+    SponsorNames = _require5.SponsorNames,
+    SponsorImages = _require5.SponsorImages,
+    SponsorDiscounts = _require5.SponsorDiscounts;
+
+var _require6 = require('discord.js'),
+    Client = _require6.Client,
+    GatewayIntentBits = _require6.GatewayIntentBits,
+    EmbedBuilder = _require6.EmbedBuilder;
 
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
   partials: ["MESSAGE", "REACTION"]
-}); //manage role prefixes
+});
+var RANDOM = -1; //may change to const variable later
+//manage role prefixes
 
 var ADD_ROLE_PREFIX = '!add';
 var REMOVE_ROLE_PREFIX = '!rmv';
@@ -251,23 +258,37 @@ client.on('messageCreate', function (message) {
       message.reply('Week ' + (_i3 + 1).toString() + ' resources: ' + EnglishClassLinksSpring[_i3]);
       message.channel.send('type "!help-language-bot" if you forgot any more commands');
     }
-  }
+  } //load hiragana sheets
+
 
   if (message.content.toLowerCase() === '!hiragana sheet'.toLowerCase()) {
     message.reply(HiraganaSheet);
     message.channel.send('type "!help-language-bot" if you forgot any more commands');
-  }
+  } //load katakana sheets
+
 
   if (message.content.toLowerCase() === '!katakana sheet'.toLowerCase()) {
     message.reply(KatakanaSheet);
     message.channel.send('type "!help-language-bot" if you forgot any more commands');
-  }
+  } //load help page
+
 
   if (message.content.toLowerCase() === '!help-language-bot'.toLowerCase()) {
     message.reply({
       embeds: [helpEmbed]
     });
     message.channel.send('For more information see: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing');
+  }
+
+  if (message.content.toLowerCase() === '!guess sponsor'.toLowerCase()) {
+    var random = Math.floor(Math.random() * SponsorNames.length);
+    RANDOM = random;
+    message.reply('Guess this sponsor: ' + SponsorImages[RANDOM]);
+  }
+
+  if (message.content.toLowerCase() === "".concat(SponsorNames[RANDOM]).toLowerCase()) {
+    message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+    RANDOM = -1;
   }
 
   if (message.content === 'k!sf-score-jeffrey') {

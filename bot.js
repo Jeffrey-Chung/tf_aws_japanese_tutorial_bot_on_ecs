@@ -4,6 +4,7 @@ const {BeginnerClassLinksSpring, HiraganaSheet, KatakanaSheet} = require('./begi
 const {IntermediateClassLinksSpring} = require('./intermediate.js');
 const {AdvancedClassLinksSpring} = require('./advanced.js');
 const {EnglishClassLinksSpring} = require('./english.js');
+const {SponsorNames, SponsorImages, SponsorDiscounts} = require('./sponsors.js');
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const client = new Client({
 	intents: [
@@ -14,7 +15,7 @@ const client = new Client({
     partials: ["MESSAGE", "REACTION"]
 });
 
-
+var RANDOM = -1; //may change to const variable later
 //manage role prefixes
 const ADD_ROLE_PREFIX = '!add';
 const REMOVE_ROLE_PREFIX = '!rmv';   
@@ -180,20 +181,31 @@ client.on('messageCreate', message => {
             message.channel.send('type "!help-language-bot" if you forgot any more commands');
         }
     }
-
+    //load hiragana sheets
     if(message.content.toLowerCase()==='!hiragana sheet'.toLowerCase()){
         message.reply(HiraganaSheet);
         message.channel.send('type "!help-language-bot" if you forgot any more commands');
     }
-
+    //load katakana sheets
     if(message.content.toLowerCase() === '!katakana sheet'.toLowerCase()){
         message.reply(KatakanaSheet);
         message.channel.send('type "!help-language-bot" if you forgot any more commands');
     }
-
+    //load help page
     if(message.content.toLowerCase() === '!help-language-bot'.toLowerCase()){
         message.reply({ embeds: [helpEmbed] });
         message.channel.send('For more information see: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
+    }
+    
+    if(message.content.toLowerCase() === '!guess sponsor'.toLowerCase()){
+        var random = Math.floor(Math.random() * SponsorNames.length);
+        RANDOM = random;
+        message.reply('Guess this sponsor: ' + SponsorImages[RANDOM]);
+    }
+    
+    if(message.content.toLowerCase() === `${SponsorNames[RANDOM]}`.toLowerCase()){
+        message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+        RANDOM = -1;
     }
     
     if(message.content === 'k!sf-score-jeffrey') {
