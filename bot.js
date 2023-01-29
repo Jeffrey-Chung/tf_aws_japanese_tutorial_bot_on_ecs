@@ -168,44 +168,54 @@ client.on('messageCreate', message => {
             message.reply('Week ' + (i+1).toString() + ' resources: ' + EnglishClassLinksSpring[i] + '\ntype "!help-language-bot" if you forgot any more commands');
         }
     }
+
     //load hiragana sheets
     if(message.content.toLowerCase()==='!hiragana sheet'.toLowerCase()){
         message.reply(HiraganaSheet + '\ntype "!help-language-bot" if you forgot any more commands');
     }
+
     //load katakana sheets
     if(message.content.toLowerCase() === '!katakana sheet'.toLowerCase()){
         message.reply(KatakanaSheet + '\ntype "!help-language-bot" if you forgot any more commands');
     }
+
     //load help page
     if(message.content.toLowerCase() === '!help-language-bot'.toLowerCase()){
         message.reply({ embeds: [helpEmbed] });
         message.channel.send('For more information see: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing')
     }
-    
+
+    //guess sponsor game
+    //part 1: trigger the randomized sponsor image
     if(message.content.toLowerCase() === '!guess sponsor'.toLowerCase()){
         var random = Math.floor(Math.random() * SponsorNames.length);
         RANDOM = random;
         message.reply('Guess this sponsor: ' + SponsorImages[RANDOM]);
-        GUESS_SPONSOR = true;
+        GUESS_SPONSOR = true; //set 10s timer to guess
     }
+
+    //part 2: logic if time runs out for both correct and incorrect answer
     if(GUESS_SPONSOR) {
         var timeleft = 10;
         var downloadTimer = setInterval(function(){
-            if(timeleft <= 0 && CORRECT_ANSWER == false){
-                message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
-                RANDOM = -1;
+            if(timeleft <= 0) {
                 clearInterval(downloadTimer);
-            }
-            else if (timeleft <= 0 && CORRECT_ANSWER == true) {
-                CORRECT_ANSWER = false;    
-                clearInterval(downloadTimer);           
+                //send the correct answer if time runs out + incorrect/no answer
+                if(CORRECT_ANSWER == false) {
+                    message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+                    RANDOM = -1;
+                }
+                //correct answer + time runs out -> set back the correct answer boolean to false
+                else {
+                    CORRECT_ANSWER = false;
+                }
             }
             timeleft -= 1;
         }, 1000);
-        GUESS_SPONSOR = false;
+        GUESS_SPONSOR = false; //game officially finish
     }
     
-    
+    //part 2.5: if correct answer is guessed
     if(message.content.toLowerCase() === `${SponsorNames[RANDOM]}`.toLowerCase()){
         message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
         CORRECT_ANSWER = true;

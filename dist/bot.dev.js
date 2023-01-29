@@ -252,31 +252,38 @@ client.on('messageCreate', function (message) {
       embeds: [helpEmbed]
     });
     message.channel.send('For more information see: ' + 'https://docs.google.com/document/d/1a_bc031_JFLhPw3zdEt6jDCn-tBeL72sXgTNxn1Wcbg/edit?usp=sharing');
-  }
+  } //guess sponsor game
+  //part 1: trigger the randomized sponsor image
+
 
   if (message.content.toLowerCase() === '!guess sponsor'.toLowerCase()) {
     var random = Math.floor(Math.random() * SponsorNames.length);
     RANDOM = random;
     message.reply('Guess this sponsor: ' + SponsorImages[RANDOM]);
-    GUESS_SPONSOR = true;
-  }
+    GUESS_SPONSOR = true; //set 10s timer to guess
+  } //part 2: logic if time runs out for both correct and incorrect answer
+
 
   if (GUESS_SPONSOR) {
     var timeleft = 10;
     var downloadTimer = setInterval(function () {
-      if (timeleft <= 0 && CORRECT_ANSWER == false) {
-        message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
-        RANDOM = -1;
-        clearInterval(downloadTimer);
-      } else if (timeleft <= 0 && CORRECT_ANSWER == true) {
-        CORRECT_ANSWER = false;
-        clearInterval(downloadTimer);
+      if (timeleft <= 0) {
+        clearInterval(downloadTimer); //send the correct answer if time runs out + incorrect/no answer
+
+        if (CORRECT_ANSWER == false) {
+          message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+          RANDOM = -1;
+        } //correct answer + time runs out -> set back the correct answer boolean to false
+        else {
+            CORRECT_ANSWER = false;
+          }
       }
 
       timeleft -= 1;
     }, 1000);
-    GUESS_SPONSOR = false;
-  }
+    GUESS_SPONSOR = false; //game officially finish
+  } //part 2.5: if correct answer is guessed
+
 
   if (message.content.toLowerCase() === "".concat(SponsorNames[RANDOM]).toLowerCase()) {
     message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
