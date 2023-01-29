@@ -83,6 +83,9 @@ client.on('messageCreate', function (message) {
     name: 'Katakana Sheet',
     value: '!Katakana Sheet'
   }, {
+    name: 'Guess Sponsor Game',
+    value: '!guess sponsor'
+  }, {
     name: 'Help Command',
     value: '!help-language-bot'
   }).setFooter({
@@ -271,7 +274,7 @@ client.on('messageCreate', function (message) {
         clearInterval(downloadTimer); //send the correct answer if time runs out + incorrect/no answer
 
         if (CORRECT_ANSWER == false) {
-          message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!");
+          message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
           RANDOM = -1;
         } //correct answer + time runs out -> set back the correct answer boolean to false
         else {
@@ -286,7 +289,7 @@ client.on('messageCreate', function (message) {
 
 
   if (message.content.toLowerCase() === "".concat(SponsorNames[RANDOM]).toLowerCase()) {
-    message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!");
+    message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
     CORRECT_ANSWER = true;
     RANDOM = -1;
   }

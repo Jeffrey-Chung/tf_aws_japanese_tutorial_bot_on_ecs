@@ -18,19 +18,29 @@ How to load resources of any week: !Week [week number] [Class Name]
  - !Week 1 Beginners loads resources from the first lesson of beginners class 
  - !Week 5 Advanced loads resources from the 5th class of the advanced class)
 
-For Spring 2022:
+For Autumn 2023:
 - Week 1 = 1st Lesson (Week 3)
 - Week 2 = 2nd Lesson (Week 4)
 - Week 3 = 3rd Lesson (Week 5)
 - Week 4 = 4th Lesson (Week 6)
 - Week 5 = 5th Lesson (Week 7)
-- Week 6 = 6th Lesson (Week 8 for Eng + Adv, Week 9 for Int + Beg)
-- Week 7 = 7th Lesson (Week 9 for Eng + Adv, Week 10 for Int + Beg)
-- Week 8 = 8th Lesson (Week 10 for Eng + Adv, Week 9 for Int + Beg)
-- Week 9 = 9th/last lesson (Week 11 for Eng + Adv, Week 12 for Int + Beg)
+- Week 6 = 6th Lesson (Week 8)
+- Week 7 = 7th Lesson (Week 9)
+- Week 8 = 8th Lesson (Week 10)
+- Week 9 = 9th/last lesson (Week 11)
 
 For Beginners Specifically: 
 How to load hiragana sheets: !hiragana sheet
 How to load katakana sheets: !katakana sheet
 
-For any more help type: !help 
+For any more help type: !help-language-bot 
+
+Guess Sponsor Game:
+----------------------------------------------------------------------------------------------------------
+This is an initiative to promote our 2023 sponsors on our Discord server. This is how it works:
+
+1. Type '!guess sponsor' (w/o quotations) to load an image from one of our sponsors
+2. Guess that sponsor within a 10s timeframe
+3. If you guessed it correctly before the time limit, it will congratulate you + show you the benefits of that sponsorship
+4. If you can't guess it by the time limit, it will tell you the correct answer + its benefits
+5. If you guessed it incorrectly before the time limit, you have unlimited attempts within 10s before you get the correct answer

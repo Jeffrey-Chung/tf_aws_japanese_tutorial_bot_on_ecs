@@ -51,6 +51,7 @@ client.on('messageCreate', message => {
         { name: 'Load Slides', value: '!Week <Week number> <Class Name>' },
         { name: 'Hiragana Sheet', value: '!Hiragana Sheet' },
         { name: 'Katakana Sheet', value: '!Katakana Sheet' },
+        { name: 'Guess Sponsor Game', value: '!guess sponsor' },
         { name: 'Help Command', value: '!help-language-bot' },
 	)
 	.setFooter({ text: 'All commands are space sensitive, but NOT case sensitive, make sure spelling is all correct' });
@@ -202,7 +203,7 @@ client.on('messageCreate', message => {
                 clearInterval(downloadTimer);
                 //send the correct answer if time runs out + incorrect/no answer
                 if(CORRECT_ANSWER == false) {
-                    message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!");
+                    message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
                     RANDOM = -1;
                 }
                 //correct answer + time runs out -> set back the correct answer boolean to false
@@ -217,7 +218,7 @@ client.on('messageCreate', message => {
 
     //part 2.5: if correct answer is guessed
     if(message.content.toLowerCase() === `${SponsorNames[RANDOM]}`.toLowerCase()){
-        message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!");
+        message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
         CORRECT_ANSWER = true;
         RANDOM = -1;
     }
