@@ -24,12 +24,7 @@ var _require5 = require('discord.js'),
 var client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
   partials: ["MESSAGE", "REACTION"]
-}); //class IDs
-//const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
-//const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
-//const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
-//const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
-//manage role prefixes
+}); //manage role prefixes
 
 var ADD_ROLE_PREFIX = '!add';
 var REMOVE_ROLE_PREFIX = '!rmv';
@@ -37,10 +32,14 @@ var ADD_FEEDBACK = ' class role added';
 var REMOVE_FEEDBACK = ' class role removed';
 var WEEK_PREFIX = '!Week '; //types of classes
 
-var BEGINNER = 'Beginners';
-var INTERMEDIATE = 'Intermediate';
-var ADVANCED = 'Advanced';
-var ENGLISH = 'English';
+var BEGINNER = 'Beginners'; //add appropriate role ID for beginner role in JASS server
+
+var INTERMEDIATE = 'Intermediate'; //add appropriate role ID for intermediate role in JASS server
+
+var ADVANCED = 'Advanced'; //add appropriate role ID for advanced role in JASS server
+
+var ENGLISH = 'English'; //add appropriate role ID for english role in JASS server
+
 client.on('ready', function () {
   console.log('The bot is ready');
 });
@@ -64,7 +63,7 @@ client.on('messageCreate', function (message) {
     value: '!add <Class Name>'
   }, {
     name: 'Remove Command',
-    value: '!remove <Class Name>'
+    value: '!rmv <Class Name>'
   }, {
     name: 'Load Slides',
     value: '!Week <Week number> <Class Name>'

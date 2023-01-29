@@ -7,7 +7,7 @@ How to use bot:
 Add/Remove roles:
 ----------------------------------------------------------------------------------------------------------
 - How to add a role: !add [Class Name] (i.e. !add Beginners, !add Intermediate etc.) 
-- How to remove your role: !remove [Class Name] (i.e. !remove English, !remove Advanced etc.) 
+- How to remove your role: !rmv [Class Name] (i.e. !rmv English, !rmv Advanced etc.) 
 
 Load class resources for language classes:
 ----------------------------------------------------------------------------------------------------------

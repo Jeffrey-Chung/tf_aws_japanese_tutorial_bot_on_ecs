@@ -15,12 +15,6 @@ const client = new Client({
 });
 
 
-//class IDs
-//const BEGINNER_ID = '1024671967846080613'; //add appropriate role ID for beginner role in JASS server
-//const INTERMEDIATE_ID = '1024672039585460224'; //add appropriate role ID for intermediate role in JASS server
-//const ADVANCED_ID = '1024672057855844392'; //add appropriate role ID for advanced role in JASS server
-//const ENGLISH_ID = '1024672075526438922'; //add appropriate role ID for english role in JASS server
-
 //manage role prefixes
 const ADD_ROLE_PREFIX = '!add';
 const REMOVE_ROLE_PREFIX = '!rmv';   
@@ -29,10 +23,10 @@ const REMOVE_FEEDBACK = ' class role removed';
 const WEEK_PREFIX = '!Week ';
 
 //types of classes
-const BEGINNER = 'Beginners';
-const INTERMEDIATE = 'Intermediate';
-const ADVANCED = 'Advanced';
-const ENGLISH = 'English';
+const BEGINNER = 'Beginners'; //add appropriate role ID for beginner role in JASS server
+const INTERMEDIATE = 'Intermediate'; //add appropriate role ID for intermediate role in JASS server
+const ADVANCED = 'Advanced'; //add appropriate role ID for advanced role in JASS server
+const ENGLISH = 'English'; //add appropriate role ID for english role in JASS server
 
 client.on('ready', () => {
     console.log('The bot is ready');
@@ -50,7 +44,7 @@ client.on('messageCreate', message => {
         { name: 'Week Numbers', value: '1, 2, 3, 4, 5, 6, 7, 8, 9'},
         { name: '\u200B', value: '\u200B' }, //blank space
 		{ name: 'Add Command', value: '!add <Class Name>'},
-		{ name: 'Remove Command', value: '!remove <Class Name>' },
+		{ name: 'Remove Command', value: '!rmv <Class Name>' },
         { name: 'Load Slides', value: '!Week <Week number> <Class Name>' },
         { name: 'Hiragana Sheet', value: '!Hiragana Sheet' },
         { name: 'Katakana Sheet', value: '!Katakana Sheet' },
