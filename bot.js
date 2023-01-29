@@ -16,6 +16,8 @@ const client = new Client({
 });
 
 var RANDOM = -1; //may change to const variable later
+var GUESS_SPONSOR = false;
+var CORRECT_ANSWER = false;
 //manage role prefixes
 const ADD_ROLE_PREFIX = '!add';
 const REMOVE_ROLE_PREFIX = '!rmv';   
@@ -184,10 +186,29 @@ client.on('messageCreate', message => {
         var random = Math.floor(Math.random() * SponsorNames.length);
         RANDOM = random;
         message.reply('Guess this sponsor: ' + SponsorImages[RANDOM]);
+        GUESS_SPONSOR = true;
     }
+    if(GUESS_SPONSOR) {
+        var timeleft = 10;
+        var downloadTimer = setInterval(function(){
+            if(timeleft <= 0 && CORRECT_ANSWER == false){
+                message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+                RANDOM = -1;
+                clearInterval(downloadTimer);
+            }
+            else if (timeleft <= 0 && CORRECT_ANSWER == true) {
+                CORRECT_ANSWER = false;    
+                clearInterval(downloadTimer);           
+            }
+            timeleft -= 1;
+        }, 1000);
+        GUESS_SPONSOR = false;
+    }
+    
     
     if(message.content.toLowerCase() === `${SponsorNames[RANDOM]}`.toLowerCase()){
         message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + " Type '!guess sponsor' to try again!");
+        CORRECT_ANSWER = true;
         RANDOM = -1;
     }
     
