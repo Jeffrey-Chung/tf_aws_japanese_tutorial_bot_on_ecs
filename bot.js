@@ -15,9 +15,8 @@ const client = new Client({
     partials: ["MESSAGE", "REACTION"]
 });
 
-var RANDOM = -1; //may change to const variable later
-var GUESS_SPONSOR = false;
-var CORRECT_ANSWER = false;
+var randomSponsorIndex = -1; //may change to const variable later
+var guessSponsor = false;
 //manage role prefixes
 const ADD_ROLE_PREFIX = '!add';
 const REMOVE_ROLE_PREFIX = '!rmv';   
@@ -190,37 +189,32 @@ client.on('messageCreate', message => {
     //part 1: trigger the randomized sponsor image
     if(message.content.toLowerCase() === '!guess sponsor'.toLowerCase()){
         var random = Math.floor(Math.random() * SponsorNames.length);
-        RANDOM = random;
-        message.reply('Guess this sponsor: ' + SponsorImages[RANDOM]);
-        GUESS_SPONSOR = true; //set 10s timer to guess
+        randomSponsorIndex = random;
+        message.reply('Guess this sponsor: ' + SponsorImages[randomSponsorIndex]);
+        guessSponsor = true; //set 10s timer to guess
     }
 
     //part 2: logic if time runs out for both correct and incorrect answer
-    if(GUESS_SPONSOR) {
+    if(guessSponsor) {
         var timeleft = 10;
         var downloadTimer = setInterval(function(){
             if(timeleft <= 0) {
                 clearInterval(downloadTimer);
                 //send the correct answer if time runs out + incorrect/no answer
-                if(CORRECT_ANSWER == false) {
-                    message.reply('The correct answer should be ' + SponsorNames[RANDOM] + '. They provide ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
-                    RANDOM = -1;
-                }
-                //correct answer + time runs out -> set back the correct answer boolean to false
-                else {
-                    CORRECT_ANSWER = false;
+                if(randomSponsorIndex > -1) {
+                    message.reply('The correct answer should be ' + SponsorNames[randomSponsorIndex] + '. They provide ' + SponsorDiscounts[randomSponsorIndex] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
+                    randomSponsorIndex = -1;
                 }
             }
             timeleft -= 1;
         }, 1000);
-        GUESS_SPONSOR = false; //game officially finish
+        guessSponsor = false; //game officially finish
     }
 
     //part 2.5: if correct answer is guessed
-    if(message.content.toLowerCase() === `${SponsorNames[RANDOM]}`.toLowerCase()){
-        message.reply('Congrats, you got the answer! ' + SponsorNames[RANDOM] + ' provides ' + SponsorDiscounts[RANDOM] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
-        CORRECT_ANSWER = true;
-        RANDOM = -1;
+    if(message.content.toLowerCase() === `${SponsorNames[randomSponsorIndex]}`.toLowerCase()){
+        message.reply('Congrats, you got the answer! ' + SponsorNames[randomSponsorIndex] + ' provides ' + SponsorDiscounts[randomSponsorIndex] + "\nType '!guess sponsor' to try again!" + '\nType "!help-language-bot" if you forgot any more commands');
+        randomSponsorIndex = -1;
     }
     
     if(message.content === 'k!sf-score-jeffrey') {
