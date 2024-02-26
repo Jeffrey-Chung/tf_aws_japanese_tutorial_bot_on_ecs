@@ -1,4 +1,4 @@
-# language-bot-test
+# japanese_language_bot
 How to use bot: 
 - There are 2 functionalities of this bot: add/remove roles + load resources for language classes
 - (Note all commands are space sensitive but NOT case sensitive)
