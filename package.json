@@ -6,7 +6,7 @@
   "module": "commonjs",
   "scripts": {
     "start": "node bot.js",
-    "devStart": "nodemon bot.js"
+    "dev": "nodemon bot.js"
   },
   "repository": {
     "type": "git",
