@@ -39,4 +39,4 @@ jobs:
           file: Dockerfile
           push: true
           target: ${{ inputs.environment }}
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/japanese-language-bot:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/japanese-language-bot-${{ inputs.environment }}:latest
