@@ -3,6 +3,14 @@ name: Push to DockerHub
 # Workflow is triggered manually (workflow dispatch)
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: build dev image or prod image
+        type: choice
+        required: true
+        options:
+          - dev
+          - prod
 
 jobs:
   build-and-push-image:
@@ -30,5 +38,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          target: prod
+          target: ${{ inputs.environment }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/japanese-language-bot:latest
