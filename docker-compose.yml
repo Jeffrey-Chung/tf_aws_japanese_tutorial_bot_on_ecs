@@ -1,0 +1,6 @@
+version: '3.9'
+services:
+  discord-bot:
+    image: 3ku11/japanese-language-bot-prod:latest
+    container_name: japanese-language-bot
+ 
