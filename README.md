@@ -1,7 +1,8 @@
 # japanese_language_bot
 <h2>How to use bot: </h2>
 
-<b>Command to run bot:</b> `docker run -d 3ku11/japanese-language-bot:latest`
+<b>Command to run bot:</b> `docker-compose up -d`
+<b>Command to shut down bot:</b> `docker-compose down`
 
 - There are 2 functionalities of this bot: add/remove roles + load resources for language classes
 - (Note all commands are space sensitive but NOT case sensitive)
