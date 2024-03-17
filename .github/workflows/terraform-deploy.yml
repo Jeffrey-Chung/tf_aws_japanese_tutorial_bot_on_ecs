@@ -9,6 +9,9 @@ on:
         required: true
         options:
           - EC2
+          - beanstalk
+          - ECS
+          
       action_type:
           description: "Type of action you want to take (i.e. 'build' or 'destroy')"
           type: choice
