@@ -1,11 +1,11 @@
-module "EC2" {
-  source = "./modules/EC2"
+module "ec2" {
+  source = "./modules/ec2"
 }
 
 module "beanstalk" {
   source = "./modules/beanstalk"
 }
 
-module "ECS" {
-  source = "./modules/ECS"
+module "ecs" {
+  source = "./modules/ecs"
 }
