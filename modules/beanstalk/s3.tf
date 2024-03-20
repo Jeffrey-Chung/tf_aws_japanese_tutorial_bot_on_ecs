@@ -47,6 +47,6 @@ resource "aws_s3_object" "docker_compose_file" {
   ]
   key          = "docker-compose.yml"
   source       = "${path.root}/docker-compose.yml"
-  content_type = "text/html"
+  content_type = "application/yaml"
   etag         = filemd5("${path.root}/docker-compose.yml")
 }
