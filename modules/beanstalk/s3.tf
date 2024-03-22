@@ -45,8 +45,8 @@ resource "aws_s3_object" "docker_compose_file" {
     aws_s3_bucket_ownership_controls.jchung_s3_bucket_ownership_controls,
     aws_s3_bucket_public_access_block.jchung_s3_bucket_bucket_public_access_block,
   ]
-  key          = "docker-compose.yml"
-  source       = "${path.root}/docker-compose.yml"
+  key          = var.docker_file
+  source       = "${path.root}/${var.docker_file}"
   content_type = "application/yaml"
-  etag         = filemd5("${path.root}/docker-compose.yml")
+  etag         = filemd5("${path.root}/${var.docker_file}")
 }
