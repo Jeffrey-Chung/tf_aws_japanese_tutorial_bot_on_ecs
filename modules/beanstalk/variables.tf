@@ -13,3 +13,6 @@ variable "beanstalk_application_name" {
 variable "beanstalk_application_description" {
   default = "Bot that assigns resources for Japanese Language Classes"
 }
+variable "beanstalk_version_label" {
+  default = "Version 0.1"
+}
