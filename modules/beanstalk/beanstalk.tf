@@ -3,14 +3,6 @@ resource "aws_elastic_beanstalk_application" "japanese_language_bot" {
   description = var.beanstalk_application_description
 }
 
-resource "aws_elastic_beanstalk_application_version" "japanese_language_bot_version" {
-  name        = var.beanstalk_version_label
-  application = var.beanstalk_application_name
-  description = var.beanstalk_application_description
-  bucket      = aws_s3_bucket.jchung_s3_bucket.id
-  key         = aws_s3_object.docker_compose_file.id
-}
-
 resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
   name                = var.beanstalk_environment_name
   application         = aws_elastic_beanstalk_application.japanese_language_bot.name
@@ -21,4 +13,12 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
       name      = "IamInstanceProfile"
       value     = "aws-elasticbeanstalk-ec2-role"
     }
+}
+
+resource "aws_elastic_beanstalk_application_version" "japanese_language_bot_version" {
+  name        = var.beanstalk_version_label
+  application = var.beanstalk_application_name
+  description = var.beanstalk_application_description
+  bucket      = aws_s3_bucket.jchung_s3_bucket.id
+  key         = aws_s3_object.docker_compose_file.id
 }
