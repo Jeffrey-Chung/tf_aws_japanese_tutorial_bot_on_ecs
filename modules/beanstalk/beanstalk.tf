@@ -19,6 +19,6 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
   setting {
       namespace = "aws:autoscaling:launchconfiguration"
       name      = "IamInstanceProfile"
-      value     = "arn:aws:iam::663790350014:role/GitHubActions-japanese-language-bot"
+      value     = "GitHubActions-japanese-language-bot"
     }
 }
