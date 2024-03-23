@@ -68,6 +68,19 @@ jobs:
         id: apply
         run: terraform apply -target=module.${{ inputs.service_type }} -auto-approve
         continue-on-error: false
+      
+      - name: Upload files from S3 bucket to Beanstalk Environment
+        if: inputs.service_type == 'beanstalk'
+        run: |
+          aws elasticbeanstalk create-application-version \
+          --application-name japanese_language_bot \
+          --source-bundle S3Bucket="tf-aws-japanese-language-bot-files-bucket",S3Key="docker-compose.yml" \
+          --version-label "Version - ${{ github.sha }}" \
+          --description "Bot that assigns resources for Japanese Language Classes"
+      
+      - name: Deploy files from S3 bucket to Beanstalk Environment
+        if: inputs.service_type == 'beanstalk'
+        run: aws elasticbeanstalk update-environment --environment-name language-bot-environment --version-label "Version - ${{ github.sha }}"
 
   tf-aws-language-discord-bot-destroy:
     name: 'tf-aws-language-discord-bot-destroy'
