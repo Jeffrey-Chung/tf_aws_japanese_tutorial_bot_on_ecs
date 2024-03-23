@@ -14,5 +14,5 @@ resource "aws_elastic_beanstalk_application_version" "default" {
 resource "aws_elastic_beanstalk_environment" "beanstalk_environment" {
   name                = var.beanstalk_application_name
   application         = var.beanstalk_application_name
-  solution_stack_name = "64bit Amazon Linux 2016.03 v2.1.6 running Docker 1.11.2"
+  solution_stack_name = "64bit Amazon Linux 2023 v4.2.2 running Docker"
 }
