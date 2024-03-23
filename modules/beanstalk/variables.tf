@@ -16,3 +16,6 @@ variable "beanstalk_application_description" {
 variable "beanstalk_version_label" {
   default = "Version 0.1"
 }
+variable "beanstalk_environment_name" {
+  default = "language-bot-environment"
+}
