@@ -63,7 +63,7 @@ resource "aws_instance" "bot-instance" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("${path.module}/bot-key.pem")
+      private_key = file("${path.root}/bot-key.pem")
       host        = self.public_ip
     }
   }
