@@ -45,10 +45,6 @@ jobs:
           role-to-assume: ${{ env.IAM_ROLE }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Create Key Pair
-        if: inputs.service_type == 'ec2'
-        run: aws ec2 create-key-pair --key-name ${{ env.KEY_NAME }} --query 'KeyMaterial' --output text > ${{ env.KEY_NAME }}.pem
-
       - uses: hashicorp/setup-terraform@v2
 
       - name: Terraform fmt
@@ -86,10 +82,6 @@ jobs:
       - name: Deploy files from S3 bucket to Beanstalk Environment
         if: inputs.service_type == 'beanstalk'
         run: aws elasticbeanstalk update-environment --environment-name language-bot-environment --version-label "Version - ${{ github.sha }}"
-
-      - name: Delete Key Pair
-        if: success() && inputs.service_type == 'ec2' || failure() && inputs.service_type == 'ec2'
-        run: aws ec2 delete-key-pair --key-name ${{ env.KEY_NAME }}
 
   tf-aws-language-discord-bot-destroy:
     name: 'tf-aws-language-discord-bot-destroy'
