@@ -3,15 +3,6 @@ name: Deployment - Terraform
 on:
   workflow_dispatch:
     inputs:
-      service_type:
-        description: "Service you want to deploy on"
-        type: choice
-        required: true
-        options:
-          - ec2
-          - beanstalk
-          - ecs
-
       action_type:
           description: "Type of action you want to take (i.e. 'build' or 'destroy')"
           type: choice
@@ -62,16 +53,15 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -target=module.${{ inputs.service_type }}
+        run: terraform plan
         continue-on-error: false
       
       - name: Terraform Apply
         id: apply
-        run: terraform apply -target=module.${{ inputs.service_type }} -auto-approve
+        run: terraform apply -auto-approve
         continue-on-error: false
       
       - name: Upload files from S3 bucket to Beanstalk Environment
-        if: inputs.service_type == 'beanstalk'
         run: |
           aws elasticbeanstalk create-application-version \
           --application-name japanese_language_bot \
@@ -80,7 +70,6 @@ jobs:
           --description "Bot that assigns resources for Japanese Language Classes"
       
       - name: Deploy files from S3 bucket to Beanstalk Environment
-        if: inputs.service_type == 'beanstalk'
         run: aws elasticbeanstalk update-environment --environment-name language-bot-environment --version-label "Version - ${{ github.sha }}"
 
   tf-aws-language-discord-bot-destroy:
@@ -105,10 +94,10 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -target=module.${{ inputs.service_type }}
+        run: terraform plan 
         continue-on-error: false
         
       - name: Terraform Destroy
         id: destroy
-        run: terraform destroy -target=module.${{ inputs.service_type }} -auto-approve
+        run: terraform destroy -auto-approve
         continue-on-error: false
