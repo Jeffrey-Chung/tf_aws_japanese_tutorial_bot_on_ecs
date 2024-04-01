@@ -7,15 +7,6 @@ variable "region" {
 variable "docker_file" {
   default = "docker-compose.yml"
 }
-variable "beanstalk_application_name" {
-  default = "japanese_language_bot"
-}
-variable "beanstalk_application_description" {
-  default = "Bot that assigns resources for Japanese Language Classes"
-}
-variable "beanstalk_version_label" {
-  default = "Version 0.1"
-}
-variable "beanstalk_environment_name" {
-  default = "language-bot-environment"
+variable "ecr_repo_name" {
+  default = "tf-aws-japanese-tutorial-bot-ecr-repo"
 }
