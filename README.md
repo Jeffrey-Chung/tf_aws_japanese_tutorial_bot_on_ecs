@@ -2,6 +2,7 @@
 <h2>How to use bot: </h2>
 
 <b>Command to run bot:</b> `docker-compose up -d`
+
 <b>Command to shut down bot:</b> `docker-compose down`
 
 <h2>This bot is deployed to AWS ECR and ECS, orchestrated with Fargate</h2>
