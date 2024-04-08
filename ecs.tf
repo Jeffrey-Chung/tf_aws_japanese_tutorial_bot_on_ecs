@@ -1,7 +1,12 @@
+# Creating an ECS cluster to run the container from ECR
 resource "aws_ecs_cluster" "bot_ecs_cluster" {
   name = var.ecs_cluster_name
 }
 
+/**Defines the blueprint/instructions on running the container
+ Using Fargate to learn how to orchestrate the containers, 
+ rather than EC2, which is sufficient for this use case since we are only running 1 container
+**/
 resource "aws_ecs_task_definition" "bot_ecs_task" {
   family                   = var.ecs_task_name # Name your task
   container_definitions    = <<DEFINITION
