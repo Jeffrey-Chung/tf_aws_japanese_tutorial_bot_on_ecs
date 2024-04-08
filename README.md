@@ -4,6 +4,12 @@
 <b>Command to run bot:</b> `docker-compose up -d`
 <b>Command to shut down bot:</b> `docker-compose down`
 
+<h2>This bot is deployed to AWS ECR and ECS, orchestrated with Fargate</h2>
+
+Feel free to go to terraform-deploy.yml to either build or destroy the cloud infrastructure.
+
+Overview:
+----------------------------------------------------------------------------------------------------------
 - There are 2 functionalities of this bot: add/remove roles + load resources for language classes
 - (Note all commands are space sensitive but NOT case sensitive)
 - Class Name: Beginners, Intermediate, Advanced, English
