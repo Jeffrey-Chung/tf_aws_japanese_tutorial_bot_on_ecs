@@ -12,13 +12,13 @@ resource "aws_ecs_task_definition" "bot_ecs_task" {
   container_definitions    = <<DEFINITION
   [
     {
-      "name": ${var.ecs_task_name},
+      "name": "${var.ecs_task_name}",
       "image": "${aws_ecr_repository.bot_ecr_repo.repository_url}",
       "essential": "true",
       "portMappings": [
         {
-          "containerPort": ${var.container_and_host_port},
-          "hostPort": ${var.container_and_host_port}
+          "containerPort":" ${var.container_and_host_port}",
+          "hostPort": "${var.container_and_host_port}"
         }
       ],
       "memory": "512",
