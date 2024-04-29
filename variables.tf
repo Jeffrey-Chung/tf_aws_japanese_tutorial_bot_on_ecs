@@ -17,5 +17,5 @@ variable "ecs_task_name" {
   default = "tf-aws-japanese-tutorial-bot-ecs-task"
 }
 variable "container_and_host_port" {
-  default = "5000" # May be separated for container and host ports
+  default = 5000 # May be separated for container and host ports
 }
