@@ -11,17 +11,17 @@ resource "aws_ecs_task_definition" "bot_ecs_task" {
   family = var.ecs_task_name # Name your task
   container_definitions = jsonencode([
     {
-      name      = tostring(var.ecs_task_name),
-      image     = tostring(aws_ecr_repository.bot_ecr_repo.repository_url)
+      name      = var.ecs_task_name,
+      image     = aws_ecr_repository.bot_ecr_repo.repository_url
       essential = true,
       portMappings = [
         {
-          "containerPort" : tostring(var.container_and_host_port),
-          "hostPort" : tostring(var.container_and_host_port)
+          "containerPort" : var.container_and_host_port,
+          "hostPort" : var.container_and_host_port
         }
       ],
-      memory = 512,
-      cpu    = 256
+      "memory" = 512,
+      "cpu"    = 256
     }
   ])
   requires_compatibilities = ["FARGATE"] # use Fargate for container orchestration
