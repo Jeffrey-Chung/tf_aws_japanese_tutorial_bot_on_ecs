@@ -14,15 +14,15 @@ resource "aws_ecs_task_definition" "bot_ecs_task" {
     {
       "name": ${var.ecs_task_name},
       "image": "${aws_ecr_repository.bot_ecr_repo.repository_url}",
-      "essential": true,
+      "essential": "true",
       "portMappings": [
         {
           "containerPort": ${var.container_and_host_port},
           "hostPort": ${var.container_and_host_port}
         }
       ],
-      "memory": 512,
-      "cpu": 256
+      "memory": "512",
+      "cpu": "256"
     }
   ]
   DEFINITION
